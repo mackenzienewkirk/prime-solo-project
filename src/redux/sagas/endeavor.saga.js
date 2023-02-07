@@ -3,10 +3,6 @@ import { put, takeLatest } from 'redux-saga/effects';
 
 function* fetchEndeavors() {
     try {
-        // const config = {
-        //     headers: { 'Content-Type': 'application/json' },
-        //     withCredentials: true,
-        // };
 
         const response = yield axios.get('/api/endeavor');
 
