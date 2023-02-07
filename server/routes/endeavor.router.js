@@ -11,8 +11,8 @@ router.get('/', rejectUnauthenticated, (req, res) => {
   const currentUserID = req.user.id;
 
   const sqlQuery = `
-  SELECT * FROM "endeavor"
-  WHERE "user_id"=$3
+  SELECT * FROM "user"
+  WHERE "user_id"=$1
   ORDER BY "id";
   `
 
