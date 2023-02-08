@@ -5,7 +5,7 @@ import EndeavorItem from './EndeavorItem';
 
 function EndeavorPage() {
     const dispatch = useDispatch();
-    const endeavors = useSelector(store => store.endeavors);
+    const endeavor = useSelector(store => store.endeavor);
 
     useEffect(() => {
         dispatch({ type: 'FETCH_ENDEAVOR' });
@@ -16,7 +16,7 @@ function EndeavorPage() {
         <h1> Endeavors Page </h1>
         <h4> Look through all of your current projects! </h4>
         <ul>
-            {endeavors?.map(endeavor => (
+            {endeavor?.map(endeavor => (
                 <EndeavorItem key={endeavor.id} endeavor={endeavor} />
             ))}
         </ul>

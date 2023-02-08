@@ -10,6 +10,7 @@ const router = express.Router();
 
 router.get('/', (req, res) => {
   // const currentUserID = req.user.id;
+  console.log('GET /api/endeavor');
 
   const sqlQuery = `
   SELECT * FROM "endeavor"
