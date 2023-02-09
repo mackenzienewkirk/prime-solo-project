@@ -28,9 +28,22 @@ function* fetchEndeavorDetails(action) {
     }
 }
 
+function* addEndeavor(action) {
+    try {
+        yield axios({
+            method: 'POST',
+            url: '/endeavor'
+        })
+        yield put({ type: 'FETCH_ENDEAVOR'})
+    } catch (err) {
+        console.log(err);
+    }
+}
+
 function* endeavorSaga() {
     yield takeLatest('FETCH_ENDEAVOR', fetchEndeavors);
     yield takeLatest('FETCH_ENDEAVOR_DETAILS', fetchEndeavorDetails);
+    yield takeLatest('ADD_ENDEAVOR', addEndeavor);
 }
 
 export default endeavorSaga; 

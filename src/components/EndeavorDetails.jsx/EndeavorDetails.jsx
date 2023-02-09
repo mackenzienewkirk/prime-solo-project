@@ -3,8 +3,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
 function EndeavorDetails() {
+
     const params = useParams();
+
     console.log('params:', params);
+
     const dispatch = useDispatch();
     const endeavor_details = useSelector((store) => store.endeavor_details)
 
@@ -17,6 +20,7 @@ function EndeavorDetails() {
 
     return (
         <>
+        
             <h1>{endeavor_details.title}</h1>
             <ul>
                 <li>{endeavor_details.budget}</li>

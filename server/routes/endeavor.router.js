@@ -31,6 +31,7 @@ router.get('/:id', (req, res) => {
   const endeavorId = req.params.id;
   const sqlQuery = `
     SELECT "id" FROM "endeavor"
+    WHERE "endeavor"."id"=$1
   `
   const sqlValues = [endeavorId]
   pool.query(sqlQuery, sqlValues)
@@ -48,6 +49,20 @@ router.get('/:id', (req, res) => {
  */
 router.post('/', (req, res) => {
   // POST route code here
+  console.log(req.body);
+
+  const insertEndeavorQuery = `
+  INSERT INTO "endeavor" ("title", "budget", "materials", "inspiration", "description", "end_goal")
+  VALUES ($1, $2, $3, $4, $5, $6)
+  RETURNING "id";`
+
+  pool.query(insertEndeavorQuery, [req.body.title, req.body.budget, req.body.materials, req.body.inspiration, req.body.description, req.body.end_goal])
+  .then(result => {
+    console.log('New endeavor id:', result.rows[0].id);
+  }).catch(err => {
+    console.log(err);
+    res.sendStatus(500)
+  })
 });
 
 module.exports = router;

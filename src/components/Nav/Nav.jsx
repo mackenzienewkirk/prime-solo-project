@@ -9,7 +9,7 @@ function Nav() {
 
   return (
     <div className="nav">
-      <Link to="/home">
+      <Link to="/endeavor">
         <h2 className="nav-title">In The Works</h2>
       </Link>
       <div>
@@ -36,8 +36,8 @@ function Nav() {
           </>
         )}
 
-        <Link className="navLink" to="/about">
-          About
+        <Link className="navLink" to="/add">
+          Add Endeavor
         </Link>
       </div>
     </div>

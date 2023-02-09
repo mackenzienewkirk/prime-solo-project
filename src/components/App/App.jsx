@@ -13,7 +13,7 @@ import Footer from '../Footer/Footer';
 
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 
-import AboutPage from '../AboutPage/AboutPage';
+import AddEndeavor from '../AddEndeavor/AddEndeavor';
 import UserPage from '../UserPage/UserPage';
 import EndeavorPage from '../Endeavor/EndeavorPage';
 import EndeavorDetails from '../EndeavorDetails.jsx/EndeavorDetails';
@@ -44,9 +44,9 @@ function App() {
           <Route
             // shows AboutPage at all times (logged in or not)
             exact
-            path="/about"
+            path="/add"
           >
-            <AboutPage />
+            <AddEndeavor />
           </Route>
 
           {/* For protected routes, the view could show one of several things on the same route.
