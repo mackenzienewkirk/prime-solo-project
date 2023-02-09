@@ -7,6 +7,8 @@ body,
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0px;
+  background-color: #E8F1FE ;
+  color: #5171A3
 }
 
 img {
@@ -116,16 +118,18 @@ Endeavor Images
 -------------------------------------------------------------------------------- */
 
 
-img {
-  margin-top: 4px;
-  margin-bottom: 4px;
-  width: 200px;
-  height: 150px;
-  border-style: solid;
-  border-color: #2B450C;
-  border-width: 2px;
+
+
+h1 {
+  text-align: center;
 }
 
-.btn {
-  
+h4 {
+  text-align: center;
 }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+

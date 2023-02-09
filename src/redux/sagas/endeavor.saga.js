@@ -12,8 +12,25 @@ function* fetchEndeavors() {
     }
 }
 
+function* fetchEndeavorDetails(action) {
+    const endeavorId = action.payload;
+    try {
+        const endeavorDetailsRes = yield axios({
+        method: 'GET',
+        url: `/api/endeavor/${endeavorId}`
+    })
+    yield put({
+        type: 'SET_ENDEAVOR_DETAILS',
+        payload: endeavorDetailsRes.data 
+    })
+    } catch (err) {
+    console.log('fetchEndeavorDetails fail:', err);
+    }
+}
+
 function* endeavorSaga() {
     yield takeLatest('FETCH_ENDEAVOR', fetchEndeavors);
+    yield takeLatest('FETCH_ENDEAVOR_DETAILS', fetchEndeavorDetails);
 }
 
 export default endeavorSaga; 

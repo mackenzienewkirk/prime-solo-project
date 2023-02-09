@@ -3,12 +3,11 @@
     grid-template-columns: auto auto auto auto;
 }
 
-img {
-    margin-top: 4px;
-    margin-bottom: 4px;
-    width: 600px;
-    height: 460px;
-    border-style: solid;
-    border-color: #2B450C;
-    border-width: 10px;
+h1 {
+    text-align: center;
 }
+
+h4 {
+    text-align: center;
+}
+

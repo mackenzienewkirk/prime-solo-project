@@ -7,4 +7,5 @@ const endeavorReducer = (state = [], action) => {
     }
 };
 
+
 export default endeavorReducer;
