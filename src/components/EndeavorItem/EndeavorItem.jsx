@@ -14,6 +14,13 @@ function EndeavorItem({ endeavor }) {
     const showEndeavorDetails = () => {
         history.push(`/endeavor/${endeavor.id}`);
     }
+
+    const deleteEndeavor = (id) => {
+        dispatch({
+        type: 'DELETE_ENDEAVOR',
+        payload: id
+        })
+    }
     
     return (
         <Card sx={{ maxWidth: 345 }}>
@@ -32,7 +39,9 @@ function EndeavorItem({ endeavor }) {
         </Typography>
     </CardContent>
     <CardActions>
-        <Button onClick={showEndeavorDetails} size="small">Learn More</Button>
+        <Button onClick={showEndeavorDetails} size="small">Show Endeavor</Button>
+        <Button onClick={() => completeEndeavor(endeavor.id)}>Complete</Button>
+        <Button onClick={() => deleteEndeavor(endeavor.id)}>Delete</Button>
     </CardActions>
     </Card>
         // <div>

@@ -28,14 +28,16 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
+  console.log('req.params.id', req.params.id);
   const endeavorId = req.params.id;
   const sqlQuery = `
-    SELECT "id" FROM "endeavor"
+    SELECT * FROM "endeavor"
     WHERE "endeavor"."id"=$1
   `
   const sqlValues = [endeavorId]
   pool.query(sqlQuery, sqlValues)
     .then((dbRes) => {
+      console.log('dbRes', dbRes.rows[0]);
       res.send(dbRes.rows[0]);
     })
     .catch((dbErr) => {
@@ -62,6 +64,45 @@ router.post('/', (req, res) => {
   }).catch(err => {
     console.log(err);
     res.sendStatus(500)
+  })
+});
+
+router.delete('/:id', (req, res) => {
+  console.log('in the delete route');
+  console.log('user:', req.user);
+  const endeavorToDelete = req.params.id;
+  const sqlQuery = `
+    SELECT "user_id" FROM "endeavor"
+      WHERE "id" = $1;
+  `;
+  const sqlValue = [endeavorToDelete];
+  pool.query(sqlQuery, sqlValue)
+  .then((response) => {
+    const userId = response.rows[0].user_id;
+    console.log('userId:', userId);
+    console.log('req.user.id:', req.user.id);
+    if (userId === req.user.id) {
+      const sqlQueryTwo = `
+        DELETE FROM "endeavor"
+          WHERE "id" = $1;
+      `;
+      const sqlValueTwo = [endeavorToDelete];
+      pool.query(sqlQueryTwo, sqlValueTwo)
+        .then((res) => {
+          // res.sendStatus(200);
+        })
+        .catch((error) => {
+          console.log('error in /api/endeavor DELETE', error);
+          res.sendStatus(500);
+        })
+    } else {
+      console.log('error: invalid user');
+      res.sendStatus(403);
+    }
+  })
+  .catch((err) => {
+    console.log('err in /api/endeavor delete', err);
+    res.sendStatus(500);
   })
 });
 

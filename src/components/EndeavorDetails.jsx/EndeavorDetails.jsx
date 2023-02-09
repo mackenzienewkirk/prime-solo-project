@@ -9,7 +9,7 @@ function EndeavorDetails() {
     console.log('params:', params);
 
     const dispatch = useDispatch();
-    const endeavor_details = useSelector((store) => store.endeavor_details)
+    const endeavor_details = useSelector(store => store.endeavor_details)
 
     useEffect(() => {
         dispatch({
@@ -20,8 +20,9 @@ function EndeavorDetails() {
 
     return (
         <>
+        <h1> Current Endeavor </h1>
         
-            <h1>{endeavor_details.title}</h1>
+            <h2>{endeavor_details.title}</h2>
             <ul>
                 <li>{endeavor_details.budget}</li>
                 <li>{endeavor_details.materials}</li>

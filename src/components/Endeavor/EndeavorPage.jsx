@@ -11,6 +11,7 @@ function EndeavorPage() {
         dispatch({ type: 'FETCH_ENDEAVOR' });
     }, [dispatch]);
 
+
     return (
         <>
         <h1> Endeavors Page </h1>

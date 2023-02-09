@@ -13,6 +13,7 @@ function* fetchEndeavors() {
 }
 
 function* fetchEndeavorDetails(action) {
+    console.log(action.payload);
     const endeavorId = action.payload;
     try {
         const endeavorDetailsRes = yield axios({
@@ -29,21 +30,39 @@ function* fetchEndeavorDetails(action) {
 }
 
 function* addEndeavor(action) {
+    console.log(action.payload)
     try {
-        yield axios({
+        const response = yield axios({
             method: 'POST',
-            url: '/endeavor'
+            url: '/api/endeavor'
         })
-        yield put({ type: 'FETCH_ENDEAVOR'})
+        yield put({ 
+            type: 'FETCH_ENDEAVOR',
+            payload: response.data
+    })
     } catch (err) {
         console.log(err);
     }
+}
+
+function* deleteEndeavor(action) {
+    const endeavorToDelete = action.payload;
+    console.log('id we are deleting:', endeavorToDelete)
+    const response = yield axios({
+        method: 'DELETE',
+        url: `/api/endeavor/${endeavorToDelete}`
+    })
+    yield put({
+        type: 'FETCH_ITEM',
+        payload: response.data
+    })
 }
 
 function* endeavorSaga() {
     yield takeLatest('FETCH_ENDEAVOR', fetchEndeavors);
     yield takeLatest('FETCH_ENDEAVOR_DETAILS', fetchEndeavorDetails);
     yield takeLatest('ADD_ENDEAVOR', addEndeavor);
+    yield takeLatest('DELETE_ENDEAVOR', deleteEndeavor);
 }
 
 export default endeavorSaga; 
