@@ -10,7 +10,8 @@ function EndeavorItem({ endeavor }) {
     
     return (
         <button onClick={showEndeavorDetails}>
-        {endeavor.title}
+            {endeavor.title}
+            <img src='images/corner_shelf.jpeg'></img>
         </button>
     )
 

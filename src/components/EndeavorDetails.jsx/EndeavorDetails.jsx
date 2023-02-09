@@ -2,32 +2,32 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
-function EndeavorDetails() {
+function Endeavor() {
     const params = useParams();
     console.log('params:', params);
     const dispatch = useDispatch();
-    const endeavorDetails = useSelector((store) => store.endeavorDetails)
+    const endeavor = useSelector((store) => store.endeavor)
 
     useEffect(() => {
         dispatch({
-            type: 'FETCH_ENDEAVOR_DETAILS',
+            type: 'FETCH_ENDEAVOR',
             payload: params.id 
         })
     }, [params.id])
 
     return (
         <>
-            <h1>{endeavorDetails.title}</h1>
+            <h1>{endeavor.title}</h1>
             <ul>
-                <li>{endeavorDetails.budget}</li>
-                <li>{endeavorDetails.materials}</li>
-                <li>{endeavorDetails.inspiration}</li>
-                <li>{endeavorDetails.description}</li>
-                <li>{endeavorDetails.end_goal}</li>
-                <li>{endeavorDetails.is_done}</li>
+                <li>{endeavor.budget}</li>
+                <li>{endeavor.materials}</li>
+                <li>{endeavor.inspiration}</li>
+                <li>{endeavor.description}</li>
+                <li>{endeavor.end_goal}</li>
+                <li>{endeavor.is_done}</li>
             </ul>
         </>
     )
 }
 
-export default EndeavorDetails;
+export default Endeavor;

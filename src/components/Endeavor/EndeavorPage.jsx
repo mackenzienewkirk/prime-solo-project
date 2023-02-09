@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import EndeavorItem from './EndeavorItem';
+import EndeavorItem from '../EndeavorItem/EndeavorItem';
 
 function EndeavorPage() {
     const dispatch = useDispatch();

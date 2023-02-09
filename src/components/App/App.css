@@ -110,3 +110,22 @@ input {
   margin: 5px;
   margin-bottom: 10px;
 }
+
+/* --------------------------------------------------------------------------------
+Endeavor Images
+-------------------------------------------------------------------------------- */
+
+
+img {
+  margin-top: 4px;
+  margin-bottom: 4px;
+  width: 200px;
+  height: 150px;
+  border-style: solid;
+  border-color: #2B450C;
+  border-width: 2px;
+}
+
+.btn {
+  
+}

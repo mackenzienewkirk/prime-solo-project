@@ -19,17 +19,6 @@ function LandingPage() {
 
       <div className="grid">
         <div className="grid-col grid-col_8">
-          <p>
-            
-          </p>
-
-          <p>
-            
-          </p>
-
-          <p>
-            
-          </p>
         </div>
         <div className="grid-col grid-col_4">
           <RegisterForm />
