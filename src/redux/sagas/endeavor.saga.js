@@ -30,7 +30,7 @@ function* fetchEndeavorDetails(action) {
 }
 
 function* addEndeavor(action) {
-    console.log(action.payload)
+    console.log(action.payload);
     try {
         const response = yield axios({
             method: 'POST',

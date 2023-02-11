@@ -51,21 +51,39 @@ router.get('/:id', (req, res) => {
  */
 router.post('/', (req, res) => {
   // POST route code here
-  console.log(req.body);
 
-  const insertEndeavorQuery = `
+  const newEndeavor = req.body;
+  console.log('Adding new task!', newEndeavor);
+
+  const sqlText = `
   INSERT INTO "endeavor" ("title", "budget", "materials", "inspiration", "description", "end_goal")
-  VALUES ($1, $2, $3, $4, $5, $6)
-  RETURNING "id";`
+  VALUES ($1, $2, $3, $4, $5, $6);`;
 
-  pool.query(insertEndeavorQuery, [req.body.title, req.body.budget, req.body.materials, req.body.inspiration, req.body.description, req.body.end_goal])
+  const sqlValues = [req.body.title, req.body.budget, req.body.materials, req.body.inspiration, req.body.description, req.body.end_goal];
+
+  pool.query(sqlText, sqlValues)
   .then(result => {
-    console.log('New endeavor id:', result.rows[0].id);
+    console.log('New endeavor id:', result.rows[0]);
   }).catch(err => {
     console.log(err);
     res.sendStatus(500)
   })
 });
+
+// router.post('/', (req, res) => {
+//   console.log(req.body);
+//   const githubName = req.body.githubName;
+//   const sqlText = `INSERT INTO students (github_name) VALUES ($1)`;
+
+//   pool.query(sqlText, [githubName])
+//       .then((result) => {
+//           res.sendStatus(201);
+//       })
+//       .catch((error) => {
+//           console.log(`Error making database query ${sqlText}`, error);
+//           res.sendStatus(500);
+//       });
+// });
 
 router.delete('/:id', (req, res) => {
   console.log('in the delete route');

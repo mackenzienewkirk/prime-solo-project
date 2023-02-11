@@ -24,12 +24,12 @@ function EndeavorDetails() {
         
             <h2>{endeavor_details.title}</h2>
             <ul>
-                <li>{endeavor_details.budget}</li>
-                <li>{endeavor_details.materials}</li>
-                <li>{endeavor_details.inspiration}</li>
-                <li>{endeavor_details.description}</li>
-                <li>{endeavor_details.end_goal}</li>
-                <li>{endeavor_details.is_done}</li>
+                <li>Budget: {endeavor_details.budget}</li>
+                <li>Materials: {endeavor_details.materials}</li>
+                <li>Inspiration: {endeavor_details.inspiration}</li>
+                <li>Description: {endeavor_details.description}</li>
+                <li>End Goal: {endeavor_details.end_goal}</li>
+                {/* <li>{endeavor_details.is_done}</li> */}
             </ul>
         </>
     )
