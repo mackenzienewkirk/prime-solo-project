@@ -52,38 +52,31 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
   // POST route code here
 
-  const newEndeavor = req.body;
-  console.log('Adding new task!', newEndeavor);
+  const newEndeavor = req.body.params;
+  const newTitle = req.body.title;
+  const newBudget = req.body.budget;
+  const newMaterials = req.body.materials;
+  const newInspiration = req.body.inspiration;
+  const newDescription = req.body.description;
+  const newEndGoal = req.body.end_goal;
+  const user_id = req.user.id;
+  console.log('Adding new endeavor!', newEndeavor);
 
   const sqlText = `
-  INSERT INTO "endeavor" ("title", "budget", "materials", "inspiration", "description", "end_goal")
-  VALUES ($1, $2, $3, $4, $5, $6);`;
+  INSERT INTO "endeavor" ("title", "budget", "materials", "inspiration", "description", "end_goal", "user_id")
+  VALUES ($1, $2, $3, $4, $5, $6, $7);`;
 
-  const sqlValues = [req.body.title, req.body.budget, req.body.materials, req.body.inspiration, req.body.description, req.body.end_goal];
+  const sqlValues = [newTitle, newBudget, newMaterials, newInspiration, newDescription, newEndGoal, user_id];
 
   pool.query(sqlText, sqlValues)
   .then(result => {
-    console.log('New endeavor id:', result.rows[0]);
+    console.log('New endeavor id:', newTitle);
   }).catch(err => {
     console.log(err);
     res.sendStatus(500)
   })
 });
 
-// router.post('/', (req, res) => {
-//   console.log(req.body);
-//   const githubName = req.body.githubName;
-//   const sqlText = `INSERT INTO students (github_name) VALUES ($1)`;
-
-//   pool.query(sqlText, [githubName])
-//       .then((result) => {
-//           res.sendStatus(201);
-//       })
-//       .catch((error) => {
-//           console.log(`Error making database query ${sqlText}`, error);
-//           res.sendStatus(500);
-//       });
-// });
 
 router.delete('/:id', (req, res) => {
   console.log('in the delete route');
@@ -107,7 +100,7 @@ router.delete('/:id', (req, res) => {
       const sqlValueTwo = [endeavorToDelete];
       pool.query(sqlQueryTwo, sqlValueTwo)
         .then((res) => {
-          // res.sendStatus(200);
+          console.log('id to delete', endeavorToDelete);
         })
         .catch((error) => {
           console.log('error in /api/endeavor DELETE', error);
@@ -115,7 +108,7 @@ router.delete('/:id', (req, res) => {
         })
     } else {
       console.log('error: invalid user');
-      res.sendStatus(403);
+      res.send(403);
     }
   })
   .catch((err) => {
