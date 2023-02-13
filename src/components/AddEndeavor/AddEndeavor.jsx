@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Card } from '@mui/material';
 import { Input } from '@mui/material';
+import { useHistory } from 'react-router-dom';
 
 function AddEndeavor() {
 
@@ -14,6 +15,7 @@ function AddEndeavor() {
   const [end_goalInput, setEnd_goalInput] = useState('');
   
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const handleSubmit = (event) => {
     console.log('dispatch');
@@ -34,6 +36,8 @@ function AddEndeavor() {
     setInspirationInput('');
     setDescriptionInput('');
     setEnd_goalInput('');
+
+    history.push(`/endeavor`);
 }
 
   return (

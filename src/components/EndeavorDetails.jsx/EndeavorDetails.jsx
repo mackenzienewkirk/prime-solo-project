@@ -23,6 +23,14 @@ function EndeavorDetails(endeavor) {
         })
     }, [params.id])
 
+    const addNote = (id) => {
+        history.push(`/note/${endeavor.id}`);
+    }
+
+    const editEndeavor = () => {
+        history.push(`/edit/${endeavor.id}`);
+    }
+
     
 
     return (
