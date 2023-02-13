@@ -8,7 +8,6 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { useDispatch } from 'react-redux';
-import { fontFamily } from '@mui/system';
 
 function EndeavorItem({ endeavor }) {
     const history = useHistory();

@@ -2,6 +2,9 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import EndeavorItem from '../EndeavorItem/EndeavorItem';
+import Icons from '../Icons';
+import { Grid } from '@mui/material';
+import { MoveDown } from '@mui/icons-material';
 
 function EndeavorPage() {
     const dispatch = useDispatch();
@@ -14,13 +17,19 @@ function EndeavorPage() {
 
     return (
         <>
-        <h1> Endeavors Page </h1>
-        <h4> Look through all of your current projects! </h4>
-        <ul>
+        <Icons />
+        <h1> Curent Projects </h1>
+        <h4> Click on 'Show Endeavor' to see details about this project </h4>
+        <Grid container spacing={{ 
+                
+            }} 
+            columns={{ 
+                
+                }}>
             {endeavor?.map(endeavor => (
                 <EndeavorItem key={endeavor.id} endeavor={endeavor} />
             ))}
-        </ul>
+        </Grid>
         </>
     );
 }

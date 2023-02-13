@@ -27,7 +27,24 @@ function EndeavorDetails(endeavor) {
 
     return (
         <>
-        <h1> Current Endeavor </h1>
+        <h1>
+        <Card sx={{
+            elevation: 5,
+            color: '#336699',
+            background: '#FAFAFA',
+            border: 10,
+            borderColor:'#FFCCFF',
+            borderWidth: 3,
+            maxWidth: 700,
+            marginTop: 6,
+            marginBottom: 6,
+            marginLeft: 20,
+            marginRight: 20,
+            padding: 2,
+            lineHeight: 1,
+            textAlign: 'center'
+        }}> Current Endeavor </Card>
+        </h1>
         <Card sx={{
             elevation: 5,
             color: '#336699',
@@ -41,19 +58,19 @@ function EndeavorDetails(endeavor) {
             marginLeft: 8,
             marginRight: 8,
             padding: 2,
-            lineHeight: 2,
+            lineHeight: 1,
+            textAlign: 'center'
 
         }}
         >
             <h2>{endeavor_details.title}</h2>
-            <ul>
-                <li>Budget: {endeavor_details.budget}</li>
-                <li>Materials: {endeavor_details.materials}</li>
-                <li>Inspiration: {endeavor_details.inspiration}</li>
-                <li>Description: {endeavor_details.description}</li>
-                <li>End Goal: {endeavor_details.end_goal}</li>
+            
+                <p>Budget: {endeavor_details.budget}</p>
+                <p>Materials: {endeavor_details.materials}</p>
+                <p>Inspiration: {endeavor_details.inspiration}</p>
+                <p>Description: {endeavor_details.description}</p>
+                <p>End Goal: {endeavor_details.end_goal}</p>
                 {/* <li>{endeavor_details.is_done}</li> */}
-            </ul>
             <Button sx={{
         color: '#336699',
         textAlign: 'center'
