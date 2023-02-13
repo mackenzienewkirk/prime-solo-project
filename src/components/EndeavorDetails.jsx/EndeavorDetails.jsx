@@ -30,10 +30,10 @@ function EndeavorDetails(endeavor) {
         <h1>
         <Card sx={{
             elevation: 5,
-            color: '#336699',
-            background: '#FAFAFA',
+            color: '#2b4743',
+            background: '#ffd3db',
             border: 10,
-            borderColor:'#FFCCFF',
+            borderColor:'#8c3839',
             borderWidth: 3,
             maxWidth: 700,
             marginTop: 6,
@@ -47,10 +47,10 @@ function EndeavorDetails(endeavor) {
         </h1>
         <Card sx={{
             elevation: 5,
-            color: '#336699',
-            background: '#FAFAFA',
+            color: '#2b4743',
+            background: '#cedeeb',
             border: 10,
-            borderColor:'#FFD353',
+            borderColor:'#8c3839',
             borderWidth: 3,
             maxWidth: 700,
             marginTop: 6,

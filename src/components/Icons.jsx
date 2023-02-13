@@ -23,7 +23,7 @@ export default function Icons() {
     href="https://fonts.googleapis.com/icon?family=Material+Icons"
 />
     <Icon sx={{ 
-        color: green[800],
+        color: '#dda83f',
         paddingLeft: 70,
         margin: 5,
         fontSize: 30}} onClick={showAddEndeavor}>add_circle</Icon>

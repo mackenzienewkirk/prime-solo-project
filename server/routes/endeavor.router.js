@@ -51,12 +51,12 @@ router.post('/', (req, res) => {
   console.log(req.user);
   console.log('adding a new endeavor', req.body);
   const newEndeavor = req.body;
-  const newTitle = req.body.title;
-  const newBudget = req.body.budget;
-  const newMaterials = req.body.materials;
-  const newInspiration = req.body.inspiration;
-  const newDescription = req.body.description;
-  const newEndGoal = req.body.end_goal;
+  const newTitle = req.body.titleInput;
+  const newBudget = req.body.budgetInput;
+  const newMaterials = req.body.materialsInput;
+  const newInspiration = req.body.inspirationInput;
+  const newDescription = req.body.descriptionInput;
+  const newEndGoal = req.body.end_goalInput;
   const user_id = req.user.id;
   console.log('Adding new endeavor!', newEndeavor);
 
@@ -81,10 +81,16 @@ router.put('/:id', (req, res) => {
   const idToUpdate = req.params.id;
   const sqlText = `
     UPDATE "endeavor"
-      SET =$1 
-      WHERE id=$2
+      SET "title"=$1,
+      "budget"=$2,
+      "materials"=$3,
+      "inspiration"=$4,
+      "description"=$5,
+      "end_goal"=$6,
+      "user_id"=$7
+      WHERE id=$8
   `;
-  pool.query(sqlText, [req.body.github_name, idToUpdate])
+  pool.query(sqlText, [req.body.title, req.body.budget, req.body.materials, req.body.inspiration, req.body.description, req.body.end_goal, req.body.user_id,  idToUpdate])
       .then((result) => {
           res.sendStatus(200);
       })

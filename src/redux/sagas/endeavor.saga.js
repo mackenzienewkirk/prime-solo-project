@@ -35,6 +35,7 @@ function* addEndeavor(action) {
         const response = yield axios({
             method: 'POST',
             url: '/api/endeavor',
+            data: action.payload
         })
         yield put({ 
             type: 'FETCH_ENDEAVOR',
@@ -43,7 +44,6 @@ function* addEndeavor(action) {
     } catch (err) {
         console.log(err);
     }
-    console.log(response.data);
 }
 
 function* deleteEndeavor(action) {
@@ -59,11 +59,40 @@ function* deleteEndeavor(action) {
     })
 }
 
+function* fetchEndeavorToEdit(action) {
+    const idOfEndeavorToEdit = action.payload;
+    
+    const response = yield axios({
+        method: 'GET',
+        url: `/endeavor/${idOfEndeavorToEdit}`
+    })
+    yield put({
+        type: 'SET_ENDEAVOR_TO_EDIT',
+        payload: response.data
+    })
+}
+
+function* updateEndeavor(action) {
+    const editedEndeavor = action.payload;
+    yield axios({
+        method: 'PUT',
+        url: `/endeavor/${editedEndeavor.id}`,
+        data: editedEndeavor
+    })
+
+    yield put({
+        type: 'FETCH_ENDEAVOR'
+    })
+
+}
+
 function* endeavorSaga() {
     yield takeLatest('FETCH_ENDEAVOR', fetchEndeavors);
     yield takeLatest('FETCH_ENDEAVOR_DETAILS', fetchEndeavorDetails);
     yield takeLatest('ADD_ENDEAVOR', addEndeavor);
     yield takeLatest('DELETE_ENDEAVOR', deleteEndeavor);
+    yield takeLatest('FETCH_ENDEAVOR_TO_EDIT', fetchEndeavorToEdit)
+    yield takeLatest('UPDATE_ENDEAVOR', updateEndeavor);
 }
 
 export default endeavorSaga; 

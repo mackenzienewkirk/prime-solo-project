@@ -18,6 +18,36 @@ function EditEndeavor() {
         })
         
     }, [])
+
+    const handleInputChange = (evt) => {
+        dispatch({
+            type: 'SET_GITHUB_NAME',
+            payload: evt.target.value
+        })
+    }
+    
+    const handleSubmit = (evt) => {
+        evt.preventDefault();
+        dispatch({
+            type: 'UPDATE_ENDEAVOR',
+            payload: endeavorToEdit
+        })
+        history.push('/endeavor/:id');
+    }
+    return(
+        <div>
+            <h2> Edit Endeavor </h2>
+
+            <form>
+        <input 
+            type="text"
+            // value={endeavorToEdit. || ''}
+            onChange={handleInputChange}
+        />
+        <button onClick={handleSubmit}>Submit</button>
+    </form>
+    </div>
+    )
 }
 
 export default EditEndeavor;

@@ -8,7 +8,7 @@ body {
   font-family: 'Alegreya' ;
   margin: 0px;
   background-color: #FBFBFB ;
-  color: #5171A3
+  color: #2b4743
 }
 
 /* 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif */
@@ -40,7 +40,7 @@ Button
   border-color: #014041;
   border-width: 1px 1px 3px;
   border-radius: 4px;
-  background-color: #336699;
+  background-color: #2b4743;
   color: #ffccff;
   font-size: 1.1rem;
   outline: 0;

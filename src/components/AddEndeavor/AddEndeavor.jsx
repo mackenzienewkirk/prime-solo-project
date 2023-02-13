@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Card } from '@mui/material';
+import { Input } from '@mui/material';
 
 function AddEndeavor() {
 
@@ -19,12 +20,12 @@ function AddEndeavor() {
     event.preventDefault();
     dispatch({
       type: 'ADD_ENDEAVOR',
-      payload: titleInput,
+      payload: {titleInput,
               budgetInput,
               materialsInput,
               inspirationInput,
               descriptionInput,
-              end_goalInput
+              end_goalInput}
               
     })
     setTitleInput('');
@@ -36,9 +37,10 @@ function AddEndeavor() {
 }
 
   return (
+    
     <Card sx={{
       maxWidth: 345,
-            color: '#336699',
+            color: '#2b4743',
             background: '#FAFAFA',
             border: 10,
             borderColor:'#FFD353',
@@ -57,33 +59,75 @@ function AddEndeavor() {
         <p>Create a new endeavor</p>
       </div>
         <form onSubmit={handleSubmit}>
-        <input onChange={(event) => setTitleInput(event.target.value)} 
+        <Input sx={{
+          backgroundColor: '#ffd3db',
+          color: '#2b4743',
+          padding: .5,
+          marginTop: 1,
+          marginBottom: 1,
+          borderRadius: 2,
+        }}onChange={(event) => setTitleInput(event.target.value)} 
         placeholder="Title" 
         value={titleInput}
         />
-        <input onChange={(event) => setBudgetInput(event.target.value)} 
+        <Input sx={{
+          backgroundColor: '#ffd3db',
+          color: '#2b4743',
+          padding: .5,
+          marginTop: 1,
+          marginBottom: 1,
+          borderRadius: 2,
+        }}onChange={(event) => setBudgetInput(event.target.value)} 
         placeholder="Budget" 
         value={budgetInput}
         />
-        <input onChange={(event) => setMaterialsInput(event.target.value)} 
+        <Input sx={{
+          backgroundColor: '#ffd3db',
+          color: '#2b4743',
+          padding: .5,
+          marginTop: 1,
+          marginBottom: 1,
+          borderRadius: 2,
+        }}onChange={(event) => setMaterialsInput(event.target.value)} 
         placeholder="Materials" 
         value={materialsInput}
         />
-        <input onChange={(event) => setInspirationInput(event.target.value)} 
+        <Input sx={{
+          backgroundColor: '#ffd3db',
+          color: '#2b4743',
+          padding: .5,
+          marginTop: 1,
+          marginBottom: 1,
+          borderRadius: 2,
+        }}onChange={(event) => setInspirationInput(event.target.value)} 
         placeholder="Inspiration" 
         value={inspirationInput}
         />
-        <input onChange={(event) => setDescriptionInput(event.target.value)} 
+        <Input sx={{
+          backgroundColor: '#ffd3db',
+          color: '#2b4743',
+          padding: .5,
+          marginTop: 1,
+          marginBottom: 1,
+          borderRadius: 2,
+        }}onChange={(event) => setDescriptionInput(event.target.value)} 
         placeholder="Description" 
         value={descriptionInput}
         />
-        <input onChange={(event) => setEnd_goalInput(event.target.value)} 
+        <Input sx={{
+          backgroundColor: '#ffd3db',
+          color: '#2b4743',
+          padding: .5,
+          marginTop: 1,
+          marginBottom: 1,
+          borderRadius: 2,
+        }}onChange={(event) => setEnd_goalInput(event.target.value)} 
         placeholder="End Goal" 
         value={end_goalInput}
         />
 
 
-<button>Create</button>
+<button onClick={handleSubmit}>Create</button>
 </form>
     </div>
     </Card>
