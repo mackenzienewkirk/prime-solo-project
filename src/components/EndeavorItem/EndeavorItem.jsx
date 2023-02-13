@@ -32,7 +32,8 @@ function EndeavorItem({ endeavor }) {
             background: '#FAFAFA',
             border: 10,
             borderColor:'#FFD353',
-            
+            borderWidth: 3,
+            gridTemplateColumns: 5
             }}>
     <CardMedia
         component="img"
@@ -46,7 +47,7 @@ function EndeavorItem({ endeavor }) {
         </Typography>
         <Typography sx={{variant: "body2", 
                     color: "text.secondary",
-                    fontFamily: 'Rugrats Sans'}}>
+                    }}>
         </Typography>
     </CardContent>
     <CardActions >

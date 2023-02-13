@@ -7,7 +7,7 @@ import './EndeavorDetails.css';
 import { textAlign } from '@mui/system';
 
 
-function EndeavorDetails() {
+function EndeavorDetails(endeavor) {
 
     const params = useParams();
 
@@ -23,15 +23,26 @@ function EndeavorDetails() {
         })
     }, [params.id])
 
+    
+
     return (
         <>
         <h1> Current Endeavor </h1>
         <Card sx={{
             elevation: 5,
             color: '#336699',
-            background: '#FFF1FF',
+            background: '#FAFAFA',
+            border: 10,
+            borderColor:'#FFD353',
+            borderWidth: 3,
             maxWidth: 700,
-            margin: 10
+            marginTop: 6,
+            marginBottom: 6,
+            marginLeft: 8,
+            marginRight: 8,
+            padding: 2,
+            lineHeight: 2,
+
         }}
         >
             <h2>{endeavor_details.title}</h2>
@@ -47,6 +58,12 @@ function EndeavorDetails() {
         color: '#336699',
         textAlign: 'center'
     }} onClick={() => addNote(endeavor.id)}>Add A Note</Button>
+    <Button sx={{
+        color: '#336699'
+    }} onClick={() => editEndeavor(endeavor.id)}>Edit</Button>
+    <Button sx={{
+        color: '#336699'
+    }} onClick={() => completeEndeavor(endeavor.id)}>Complete</Button>
             </Card>
         </>
     )

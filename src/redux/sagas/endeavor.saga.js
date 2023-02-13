@@ -34,7 +34,7 @@ function* addEndeavor(action) {
     try {
         const response = yield axios({
             method: 'POST',
-            url: '/api/endeavor'
+            url: '/api/endeavor',
         })
         yield put({ 
             type: 'FETCH_ENDEAVOR',
@@ -43,6 +43,7 @@ function* addEndeavor(action) {
     } catch (err) {
         console.log(err);
     }
+    console.log(response.data);
 }
 
 function* deleteEndeavor(action) {

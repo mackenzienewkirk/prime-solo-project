@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { Card } from '@mui/material';
 
 function AddEndeavor() {
 
@@ -35,6 +36,22 @@ function AddEndeavor() {
 }
 
   return (
+    <Card sx={{
+      maxWidth: 345,
+            color: '#336699',
+            background: '#FAFAFA',
+            border: 10,
+            borderColor:'#FFD353',
+            borderWidth: 3,
+            fontFamily: 'Alegreya',
+            maxWidth: 700,
+            marginTop: 6,
+            marginBottom: 6,
+            marginLeft: 8,
+            marginRight: 8,
+            padding: 2,
+            lineHeight: 2,
+    }}>
     <div className="container">
       <div>
         <p>Create a new endeavor</p>
@@ -69,6 +86,7 @@ function AddEndeavor() {
 <button>Create</button>
 </form>
     </div>
+    </Card>
   );
 }
 

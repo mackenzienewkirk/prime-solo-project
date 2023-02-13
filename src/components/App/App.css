@@ -114,10 +114,7 @@ Form Treatment
   box-shadow: 0 1px 2px rgb(0, 0, 0, 0.4);
 }
 
-input {
-  margin: 5px;
-  margin-bottom: 10px;
-}
+
 
 /* --------------------------------------------------------------------------------
 Endeavor Images
@@ -132,21 +129,4 @@ h1 {
 
 h4 {
   text-align: center;
-}
-
-.grid-container {
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-}
-
-ul {
-  text-align: left;
-}
-
-h2 {
-  text-align: center;
-}
-
-.Card.Mui-Selected {
-  background-color: #FFCB4C ;
 }

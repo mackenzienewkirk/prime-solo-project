@@ -4,10 +4,8 @@ const router = express.Router();
 
 // const { rejectUnauthenticated } = require('../modules/authentication-middleware')
 
-/**
- * GET route template
- */
 
+//GET route to get all endeavors 
 router.get('/', (req, res) => {
   // const currentUserID = req.user.id;
   console.log('GET /api/endeavor');
@@ -24,9 +22,9 @@ router.get('/', (req, res) => {
       console.log('GET things failed:', dbErr);
       res.sendStatus(500);
     })
-     // For testing only, can be removed
 });
 
+//GET route to get specific endeavor
 router.get('/:id', (req, res) => {
   console.log('req.params.id', req.params.id);
   const endeavorId = req.params.id;
@@ -46,12 +44,13 @@ router.get('/:id', (req, res) => {
     })
 })
 
-/**
- * POST route template
- */
+
+//POST route to add a new endeavor
 router.post('/', (req, res) => {
   // POST route code here
-  const newEndeavor = req.body.params;
+  console.log(req.user);
+  console.log('adding a new endeavor', req.body);
+  const newEndeavor = req.body;
   const newTitle = req.body.title;
   const newBudget = req.body.budget;
   const newMaterials = req.body.materials;
@@ -63,20 +62,39 @@ router.post('/', (req, res) => {
 
   const sqlText = `
   INSERT INTO "endeavor" ("title", "budget", "materials", "inspiration", "description", "end_goal", "user_id")
-  VALUES ($1, $2, $3, $4, $5, $6, $7);`;
+  VALUES ($1, $2, $3, $4, $5, $6, $7);
+  `;
 
   const sqlValues = [newTitle, newBudget, newMaterials, newInspiration, newDescription, newEndGoal, user_id];
 
   pool.query(sqlText, sqlValues)
-  .then(result => {
-    console.log('New endeavor id:', newTitle);
+  .then((response) => {
   }).catch(err => {
     console.log(err);
-    res.sendStatus(500)
+    res.sendStatus(500);
   })
 });
 
+//PUT route to edit an endeavor
+router.put('/:id', (req, res) => {
+  // Update chosen endeavor
+  const idToUpdate = req.params.id;
+  const sqlText = `
+    UPDATE "endeavor"
+      SET =$1 
+      WHERE id=$2
+  `;
+  pool.query(sqlText, [req.body.github_name, idToUpdate])
+      .then((result) => {
+          res.sendStatus(200);
+      })
+      .catch((error) => {
+          console.log(`Error making database query ${sqlText}`, error);
+          res.sendStatus(500);
+      });
+});
 
+//DELETE route to delete an endeavor
 router.delete('/:id', (req, res) => {
   console.log('in the delete route');
   console.log('user:', req.user);
