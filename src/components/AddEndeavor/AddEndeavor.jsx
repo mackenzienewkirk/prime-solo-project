@@ -14,6 +14,7 @@ function AddEndeavor() {
   const dispatch = useDispatch();
 
   const handleSubmit = (event) => {
+    console.log('dispatch');
     event.preventDefault();
     dispatch({
       type: 'ADD_ENDEAVOR',
@@ -30,7 +31,7 @@ function AddEndeavor() {
   return (
     <div className="container">
       <div>
-        <p>Create a new endeavor!</p>
+        <p>Create a new endeavor</p>
       </div>
         <form onSubmit={handleSubmit}>
         <input onChange={(event) => setTitleInput(event.target.value)} 

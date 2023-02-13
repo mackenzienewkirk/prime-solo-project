@@ -10,7 +10,7 @@ function Nav() {
   return (
     <div className="nav">
       <Link to="/endeavor">
-        <h2 className="nav-title">In The Works</h2>
+        <img src='images/in_the_works_logo.jpg'></img>
       </Link>
       <div>
         {/* If no user is logged in, show these links */}
@@ -37,7 +37,7 @@ function Nav() {
         )}
 
         <Link className="navLink" to="/add">
-          Add Endeavor
+          Create
         </Link>
       </div>
     </div>

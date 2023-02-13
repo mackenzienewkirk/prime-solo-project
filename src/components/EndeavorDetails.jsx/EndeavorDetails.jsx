@@ -1,6 +1,9 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import Card from '@mui/material/Card';
+import './EndeavorDetails.css';
+
 
 function EndeavorDetails() {
 
@@ -21,7 +24,7 @@ function EndeavorDetails() {
     return (
         <>
         <h1> Current Endeavor </h1>
-        
+        <Card elevation={5}>
             <h2>{endeavor_details.title}</h2>
             <ul>
                 <li>Budget: {endeavor_details.budget}</li>
@@ -31,6 +34,7 @@ function EndeavorDetails() {
                 <li>End Goal: {endeavor_details.end_goal}</li>
                 {/* <li>{endeavor_details.is_done}</li> */}
             </ul>
+            </Card>
         </>
     )
 }

@@ -5,11 +5,13 @@ body,
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Alegreya' ;
   margin: 0px;
   background-color: #FBFBFB ;
   color: #5171A3
 }
+
+/* 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif */
 
 img {
   display: inline-block;
@@ -27,6 +29,7 @@ Container
   padding-right: 400px;
 }
 
+
 /* --------------------------------------------------------------------------------
 Button
 -------------------------------------------------------------------------------- */
@@ -37,8 +40,8 @@ Button
   border-color: #014041;
   border-width: 1px 1px 3px;
   border-radius: 4px;
-  background-color: #00acb0;
-  color: #f8f8f8;
+  background-color: #336699;
+  color: #ffccff;
   font-size: 1.1rem;
   outline: 0;
   cursor: pointer;
@@ -60,7 +63,7 @@ Button
 }
 
 .btn:hover {
-  background-color: #008183;
+  background-color: #245586;
   text-decoration: none;
 }
 
@@ -142,4 +145,8 @@ ul {
 
 h2 {
   text-align: center;
+}
+
+.Card.Mui-Selected {
+  background-color: #FFCB4C ;
 }
