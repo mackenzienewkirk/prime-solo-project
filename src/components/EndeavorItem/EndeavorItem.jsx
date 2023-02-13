@@ -8,6 +8,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { useDispatch } from 'react-redux';
+import { fontFamily } from '@mui/system';
 
 function EndeavorItem({ endeavor }) {
     const history = useHistory();
@@ -25,7 +26,12 @@ function EndeavorItem({ endeavor }) {
     }
     
     return (
-        <Card sx={{ maxWidth: 345 }}>
+        <Card sx={{ 
+            maxWidth: 345,
+            color: '#c9e265',
+            background: '#FFF1FF',
+            font: 'Rugrats Sans'
+            }}>
     <CardMedia
         component="img"
         alt="title for id"
@@ -39,10 +45,16 @@ function EndeavorItem({ endeavor }) {
         <Typography variant="body2" color="text.secondary">
         </Typography>
     </CardContent>
-    <CardActions>
-        <Button onClick={showEndeavorDetails} size="small">Show Endeavor</Button>
-        <Button onClick={() => completeEndeavor(endeavor.id)}>Complete</Button>
-        <Button onClick={() => deleteEndeavor(endeavor.id)}>Delete</Button>
+    <CardActions >
+        <Button sx={{
+        color: '#336699'
+    }} onClick={showEndeavorDetails} size="small">Show Endeavor</Button>
+        <Button sx={{
+        color: '#336699'
+    }} onClick={() => completeEndeavor(endeavor.id)}>Complete</Button>
+        <Button sx={{
+        color: '#336699'
+    }} onClick={() => deleteEndeavor(endeavor.id)}>Delete</Button>
     </CardActions>
     </Card>
         // <div>
