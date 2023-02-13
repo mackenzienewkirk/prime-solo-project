@@ -26,6 +26,12 @@ function AddEndeavor() {
               end_goalInput
               
     })
+    setTitleInput('');
+    setBudgetInput('');
+    setMaterialsInput('');
+    setInspirationInput('');
+    setDescriptionInput('');
+    setEnd_goalInput('');
 }
 
   return (

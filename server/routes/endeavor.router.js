@@ -51,7 +51,6 @@ router.get('/:id', (req, res) => {
  */
 router.post('/', (req, res) => {
   // POST route code here
-
   const newEndeavor = req.body.params;
   const newTitle = req.body.title;
   const newBudget = req.body.budget;

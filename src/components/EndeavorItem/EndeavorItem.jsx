@@ -28,9 +28,11 @@ function EndeavorItem({ endeavor }) {
     return (
         <Card sx={{ 
             maxWidth: 345,
-            color: '#c9e265',
-            background: '#FFF1FF',
-            font: 'Rugrats Sans'
+            color: '#336699',
+            background: '#FAFAFA',
+            border: 10,
+            borderColor:'#FFD353',
+            
             }}>
     <CardMedia
         component="img"
@@ -42,7 +44,9 @@ function EndeavorItem({ endeavor }) {
         <Typography gutterBottom variant="h5" component="div">
         {endeavor.title}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
+        <Typography sx={{variant: "body2", 
+                    color: "text.secondary",
+                    fontFamily: 'Rugrats Sans'}}>
         </Typography>
     </CardContent>
     <CardActions >
