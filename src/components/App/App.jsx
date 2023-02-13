@@ -20,6 +20,7 @@ import EndeavorDetails from '../EndeavorDetails.jsx/EndeavorDetails';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
+import Note from '../Note/Note';
 
 import './App.css';
 
@@ -47,6 +48,13 @@ function App() {
             path="/add"
           >
             <AddEndeavor />
+          </Route>
+
+          <Route
+            exact
+            path="/note"
+          >
+            <Note />
           </Route>
 
           {/* For protected routes, the view could show one of several things on the same route.

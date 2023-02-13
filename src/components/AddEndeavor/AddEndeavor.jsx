@@ -43,18 +43,17 @@ function AddEndeavor() {
   return (
     
     <Card sx={{
-      maxWidth: 345,
             color: '#2b4743',
             background: '#FAFAFA',
             border: 10,
             borderColor:'#FFD353',
             borderWidth: 3,
             fontFamily: 'Alegreya',
-            maxWidth: 700,
+            maxWidth: 1000,
             marginTop: 6,
             marginBottom: 6,
-            marginLeft: 8,
-            marginRight: 8,
+            marginLeft: 4,
+            marginRight: 4,
             padding: 2,
             lineHeight: 2,
     }}>
@@ -90,7 +89,6 @@ function AddEndeavor() {
           color: '#2b4743',
           padding: .5,
           marginTop: 1,
-          marginBottom: 1,
           borderRadius: 2,
         }}onChange={(event) => setMaterialsInput(event.target.value)} 
         placeholder="Materials" 

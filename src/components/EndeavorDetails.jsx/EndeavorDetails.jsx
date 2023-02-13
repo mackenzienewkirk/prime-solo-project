@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import Card from '@mui/material/Card';
 import { Button } from '@mui/material';
 import './EndeavorDetails.css';
@@ -14,6 +14,7 @@ function EndeavorDetails(endeavor) {
     console.log('params:', params);
 
     const dispatch = useDispatch();
+    const history = useHistory();
     const endeavor_details = useSelector(store => store.endeavor_details)
 
     useEffect(() => {
@@ -23,7 +24,7 @@ function EndeavorDetails(endeavor) {
         })
     }, [params.id])
 
-    const addNote = (id) => {
+    const addNote = () => {
         history.push(`/note/${endeavor.id}`);
     }
 

@@ -75,6 +75,31 @@ router.post('/', (req, res) => {
   })
 });
 
+router.post('/notes', (req, res) => {
+  // POST route code here
+  console.log(req.user);
+  console.log('adding a new note', req.body);
+  const newNote = req.body;
+  const newTitle = req.body.titleInput;
+  const newDescription = req.body.descriptionInput;
+  const endeavor_id = req.user.id;
+  console.log('Adding new note!', newNote);
+
+  const sqlText = `
+  INSERT INTO "endeavor" ("title", "description", "endeavor_id")
+  VALUES ($1, $2, $3,);
+  `;
+
+  const sqlValues = [newTitle, newDescription, endeavor_id];
+
+  pool.query(sqlText, sqlValues)
+  .then((response) => {
+  }).catch(err => {
+    console.log(err);
+    res.sendStatus(500);
+  })
+});
+
 //PUT route to edit an endeavor
 router.put('/:id', (req, res) => {
   // Update chosen endeavor
