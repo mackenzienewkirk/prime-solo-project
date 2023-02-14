@@ -47,16 +47,17 @@ function EditEndeavor() {
             borderWidth: 3,
             fontFamily: 'Alegreya',
             maxWidth: 1000,
-            marginTop: 6,
-            marginBottom: 6,
+            marginTop: 2,
+            marginBottom: 2,
             marginLeft: 4,
             marginRight: 4,
-            padding: 2,
+            paddingLeft: 2,
             lineHeight: 2,
     }}>
         <div>
             <h2> Edit Endeavor: {endeavorToEdit.title} </h2>
         <form>
+            <div>Title:</div>
             <Input sx={{
             backgroundColor: '#ffd3db',
             color: '#2b4743',
@@ -69,6 +70,7 @@ function EditEndeavor() {
             value={endeavorToEdit.title || ''}
             onChange={handleInputChange}
         /> 
+        <div>Budget:</div>
             <Input sx={{
             backgroundColor: '#ffd3db',
             color: '#2b4743',
@@ -80,6 +82,7 @@ function EditEndeavor() {
             value={endeavorToEdit.budget || ''}
             onChange={handleInputChange}
         /> 
+        <div>Materials:</div>
             <Input sx={{
             backgroundColor: '#ffd3db',
             color: '#2b4743',
@@ -91,6 +94,7 @@ function EditEndeavor() {
             value={endeavorToEdit.materials || ''}
             onChange={handleInputChange}
         /> 
+        <div>Inspiration:</div>
             <Input sx={{
             backgroundColor: '#ffd3db',
             color: '#2b4743',
@@ -102,6 +106,7 @@ function EditEndeavor() {
             value={endeavorToEdit.inspiration || ''}
             onChange={handleInputChange}
         /> 
+        <div>Description:</div>
             <Input sx={{
             backgroundColor: '#ffd3db',
             color: '#2b4743',
@@ -113,6 +118,7 @@ function EditEndeavor() {
             value={endeavorToEdit.description || ''}
             onChange={handleInputChange}
         /> 
+        <div>End Goal:</div>
             <Input sx={{
             backgroundColor: '#ffd3db',
             color: '#2b4743',
@@ -124,8 +130,9 @@ function EditEndeavor() {
             value={endeavorToEdit.end_goal || ''}
             onChange={handleInputChange}
         /> 
-        
+        <div>
         <button onClick={handleSubmit}>Submit</button>
+        </div>
     </form>
     </div>
     </Card>
