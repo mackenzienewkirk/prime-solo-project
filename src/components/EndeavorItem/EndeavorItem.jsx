@@ -30,7 +30,7 @@ function EndeavorItem({ endeavor }) {
             color: '#336699',
             background: '#FAFAFA',
             border: 10,
-            borderColor:'#da7073',
+            borderColor:'#dda83f',
             borderWidth: 3,
             gridTemplateColumns: 5
             }}>

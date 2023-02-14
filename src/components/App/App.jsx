@@ -21,6 +21,7 @@ import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import Note from '../Note/Note';
+import EditEndeavor from '../EditEndeavor/EditEndeavor';
 
 import './App.css';
 
@@ -52,7 +53,14 @@ function App() {
 
           <Route
             exact
-            path="/note"
+            path="/edit"
+          >
+            <EditEndeavor />
+          </Route>
+
+          <Route
+            exact
+            path="/addNote"
           >
             <Note />
           </Route>

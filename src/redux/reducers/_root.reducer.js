@@ -4,6 +4,8 @@ import user from './user.reducer';
 import endeavor from './endeavor.reducer';
 import endeavor_details from './endeavor_details.reducer';
 import edit_endeavor from './edit_endeavor.reducer';
+import notes from './notes.reducer';
+import notes_details from './notes_details.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -16,7 +18,9 @@ const rootReducer = combineReducers({
   user, // will have an id and username if someone is logged in
   endeavor,
   edit_endeavor,
-  endeavor_details // will set endeavor of user logged in
+  endeavor_details,
+  notes,
+  notes_details // will set endeavor of user logged in
 });
 
 export default rootReducer;

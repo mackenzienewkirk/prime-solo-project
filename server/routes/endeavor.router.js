@@ -44,6 +44,44 @@ router.get('/:id', (req, res) => {
     })
 })
 
+//GET route for NOTES table
+router.get('/', (req, res) => {
+  console.log('GET /api/notes');
+
+  const sqlQuery = `
+  SELECT * FROM "notes"
+  ORDER BY "id"
+  `
+  pool.query(sqlQuery)
+    .then((dbRes) => {
+      res.send(dbRes.rows);
+    })
+    .catch((dbErr) => {
+      console.log('GET things failed:', dbErr);
+      res.sendStatus(500);
+    })
+});
+
+//GET route for specific NOTES
+router.get('/:id', (req, res) => {
+  console.log('req.params.id', req.params.id);
+  const notesId = req.params.id;
+  const sqlQuery = `
+    SELECT * FROM "notes"
+    WHERE "notes"."id"=$1
+  `
+  const sqlValues = [notesId]
+  pool.query(sqlQuery, sqlValues)
+    .then((dbRes) => {
+      console.log('dbRes', dbRes.rows[0]);
+      res.send(dbRes.rows[0]);
+    })
+    .catch((dbErr) => {
+      console.log('GET /api/notes/:id fail:', dbErr);
+      res.sendStatus(500);
+    })
+})
+
 
 //POST route to add a new endeavor
 router.post('/', (req, res) => {

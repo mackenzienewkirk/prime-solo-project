@@ -4,7 +4,6 @@ import { useHistory, useParams } from 'react-router-dom';
 import Card from '@mui/material/Card';
 import { Button } from '@mui/material';
 import './EndeavorDetails.css';
-import { textAlign } from '@mui/system';
 
 
 function EndeavorDetails(endeavor) {
@@ -16,6 +15,7 @@ function EndeavorDetails(endeavor) {
     const dispatch = useDispatch();
     const history = useHistory();
     const endeavor_details = useSelector(store => store.endeavor_details)
+    const notes = useSelector(store => store.notes)
 
     useEffect(() => {
         dispatch({
@@ -24,12 +24,19 @@ function EndeavorDetails(endeavor) {
         })
     }, [params.id])
 
+    useEffect(() => {
+        dispatch({
+            type: 'FETCH_NOTES_DETAILS',
+            payload: params.id 
+        })
+    }, [params.id])
+
     const addNote = () => {
-        history.push(`/note/${endeavor.id}`);
+        history.push(`/addNote`);
     }
 
     const editEndeavor = () => {
-        history.push(`/edit/${endeavor.id}`);
+        history.push(`/edit`);
     }
 
     
@@ -90,6 +97,11 @@ function EndeavorDetails(endeavor) {
     <Button sx={{
         color: '#336699'
     }} onClick={() => completeEndeavor(endeavor.id)}>Complete</Button>
+            </Card>
+            <Card>
+                <h4>{notes.title}</h4>
+                <h5>{notes.description}</h5>
+
             </Card>
         </>
     )

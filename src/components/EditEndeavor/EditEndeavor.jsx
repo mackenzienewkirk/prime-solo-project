@@ -32,7 +32,7 @@ function EditEndeavor() {
             type: 'UPDATE_ENDEAVOR',
             payload: endeavorToEdit
         })
-        history.push('/endeavor/:id');
+        history.push('/endeavor');
     }
     return(
         <div>
