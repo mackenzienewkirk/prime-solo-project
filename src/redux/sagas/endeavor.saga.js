@@ -134,8 +134,8 @@ function* updateEndeavor(action) {
 function* endeavorSaga() {
     yield takeLatest('FETCH_ENDEAVOR', fetchEndeavors);
     yield takeLatest('FETCH_ENDEAVOR_DETAILS', fetchEndeavorDetails);
-    yield takeLatest('FETCH_NOTES', fetchNotes);
-    yield takeLatest('FETCH_NOTES_DETAILS', fetchNotesDetails);
+    // yield takeLatest('FETCH_NOTES', fetchNotes);
+    // yield takeLatest('FETCH_NOTES_DETAILS', fetchNotesDetails);
     yield takeLatest('ADD_ENDEAVOR', addEndeavor);
     yield takeLatest('DELETE_ENDEAVOR', deleteEndeavor);
     yield takeLatest('FETCH_ENDEAVOR_TO_EDIT', fetchEndeavorToEdit)

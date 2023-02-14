@@ -5,6 +5,7 @@ import EndeavorItem from '../EndeavorItem/EndeavorItem';
 import Icons from '../Icons';
 import { Grid } from '@mui/material';
 import { MoveDown } from '@mui/icons-material';
+import './EndeavorPage.css';
 
 function EndeavorPage() {
     const dispatch = useDispatch();
@@ -18,7 +19,9 @@ function EndeavorPage() {
     return (
         <>
         <Icons />
-        <h1> Curent Projects </h1>
+        <section><img src='images/current_projects.png'></img></section>
+        <br>
+        </br>
         <h4> Click on 'Show Endeavor' to see details about this project </h4>
         <Grid container spacing={{ 
                 

@@ -45,42 +45,42 @@ router.get('/:id', (req, res) => {
 })
 
 //GET route for NOTES table
-router.get('/', (req, res) => {
-  console.log('GET /api/notes');
+// router.get('/', (req, res) => {
+//   console.log('GET /api/notes');
 
-  const sqlQuery = `
-  SELECT * FROM "notes"
-  ORDER BY "id"
-  `
-  pool.query(sqlQuery)
-    .then((dbRes) => {
-      res.send(dbRes.rows);
-    })
-    .catch((dbErr) => {
-      console.log('GET things failed:', dbErr);
-      res.sendStatus(500);
-    })
-});
+//   const sqlQuery = `
+//   SELECT * FROM "notes"
+//   ORDER BY "id"
+//   `
+//   pool.query(sqlQuery)
+//     .then((dbRes) => {
+//       res.send(dbRes.rows);
+//     })
+//     .catch((dbErr) => {
+//       console.log('GET things failed:', dbErr);
+//       res.sendStatus(500);
+//     })
+// });
 
-//GET route for specific NOTES
-router.get('/:id', (req, res) => {
-  console.log('req.params.id', req.params.id);
-  const notesId = req.params.id;
-  const sqlQuery = `
-    SELECT * FROM "notes"
-    WHERE "notes"."id"=$1
-  `
-  const sqlValues = [notesId]
-  pool.query(sqlQuery, sqlValues)
-    .then((dbRes) => {
-      console.log('dbRes', dbRes.rows[0]);
-      res.send(dbRes.rows[0]);
-    })
-    .catch((dbErr) => {
-      console.log('GET /api/notes/:id fail:', dbErr);
-      res.sendStatus(500);
-    })
-})
+// //GET route for specific NOTES
+// router.get('/:id', (req, res) => {
+//   console.log('req.params.id', req.params.id);
+//   const notesId = req.params.id;
+//   const sqlQuery = `
+//     SELECT * FROM "notes"
+//     WHERE "notes"."id"=$1
+//   `
+//   const sqlValues = [notesId]
+//   pool.query(sqlQuery, sqlValues)
+//     .then((dbRes) => {
+//       console.log('dbRes', dbRes.rows[0]);
+//       res.send(dbRes.rows[0]);
+//     })
+//     .catch((dbErr) => {
+//       console.log('GET /api/notes/:id fail:', dbErr);
+//       res.sendStatus(500);
+//     })
+// })
 
 
 //POST route to add a new endeavor
@@ -113,30 +113,30 @@ router.post('/', (req, res) => {
   })
 });
 
-router.post('/notes', (req, res) => {
-  // POST route code here
-  console.log(req.user);
-  console.log('adding a new note', req.body);
-  const newNote = req.body;
-  const newTitle = req.body.titleInput;
-  const newDescription = req.body.descriptionInput;
-  const endeavor_id = req.user.id;
-  console.log('Adding new note!', newNote);
+// router.post('/notes', (req, res) => {
+//   // POST route code here
+//   console.log(req.user);
+//   console.log('adding a new note', req.body);
+//   const newNote = req.body;
+//   const newTitle = req.body.titleInput;
+//   const newDescription = req.body.descriptionInput;
+//   const endeavor_id = req.user.id;
+//   console.log('Adding new note!', newNote);
 
-  const sqlText = `
-  INSERT INTO "endeavor" ("title", "description", "endeavor_id")
-  VALUES ($1, $2, $3,);
-  `;
+//   const sqlText = `
+//   INSERT INTO "endeavor" ("title", "description", "endeavor_id")
+//   VALUES ($1, $2, $3,);
+//   `;
 
-  const sqlValues = [newTitle, newDescription, endeavor_id];
+//   const sqlValues = [newTitle, newDescription, endeavor_id];
 
-  pool.query(sqlText, sqlValues)
-  .then((response) => {
-  }).catch(err => {
-    console.log(err);
-    res.sendStatus(500);
-  })
-});
+//   pool.query(sqlText, sqlValues)
+//   .then((response) => {
+//   }).catch(err => {
+//     console.log(err);
+//     res.sendStatus(500);
+//   })
+// });
 
 //PUT route to edit an endeavor
 router.put('/:id', (req, res) => {

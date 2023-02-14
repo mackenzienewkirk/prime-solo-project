@@ -29,9 +29,6 @@ function EndeavorItem({ endeavor }) {
             maxWidth: 345,
             color: '#336699',
             background: '#FAFAFA',
-            border: 10,
-            borderColor:'#dda83f',
-            borderWidth: 3,
             gridTemplateColumns: 5
             }}>
     <CardMedia

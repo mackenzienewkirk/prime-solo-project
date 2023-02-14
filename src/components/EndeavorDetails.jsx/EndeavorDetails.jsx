@@ -24,16 +24,16 @@ function EndeavorDetails(endeavor) {
         })
     }, [params.id])
 
-    useEffect(() => {
-        dispatch({
-            type: 'FETCH_NOTES_DETAILS',
-            payload: params.id 
-        })
-    }, [params.id])
+    // useEffect(() => {
+    //     dispatch({
+    //         type: 'FETCH_NOTES_DETAILS',
+    //         payload: params.id 
+    //     })
+    // }, [params.id])
 
-    const addNote = () => {
-        history.push(`/addNote`);
-    }
+    // const addNote = () => {
+    //     history.push(`/addNote`);
+    // }
 
     const editEndeavor = () => {
         history.push(`/edit`);
@@ -48,9 +48,6 @@ function EndeavorDetails(endeavor) {
             elevation: 5,
             color: '#2b4743',
             background: '#ffd3db',
-            border: 10,
-            borderColor:'#8c3839',
-            borderWidth: 3,
             maxWidth: 700,
             marginTop: 6,
             marginBottom: 6,
@@ -65,9 +62,6 @@ function EndeavorDetails(endeavor) {
             elevation: 5,
             color: '#2b4743',
             background: '#cedeeb',
-            border: 10,
-            borderColor:'#8c3839',
-            borderWidth: 3,
             maxWidth: 700,
             marginTop: 6,
             marginBottom: 6,
@@ -87,10 +81,10 @@ function EndeavorDetails(endeavor) {
                 <p>Description: {endeavor_details.description}</p>
                 <p>End Goal: {endeavor_details.end_goal}</p>
                 {/* <li>{endeavor_details.is_done}</li> */}
-            <Button sx={{
+            {/* <Button sx={{
         color: '#336699',
         textAlign: 'center'
-    }} onClick={() => addNote(endeavor.id)}>Add A Note</Button>
+    }} onClick={() => addNote(endeavor.id)}>Add A Note</Button> */}
     <Button sx={{
         color: '#336699'
     }} onClick={() => editEndeavor(endeavor.id)}>Edit</Button>
@@ -98,11 +92,11 @@ function EndeavorDetails(endeavor) {
         color: '#336699'
     }} onClick={() => completeEndeavor(endeavor.id)}>Complete</Button>
             </Card>
-            <Card>
+            {/* <Card>
                 <h4>{notes.title}</h4>
                 <h5>{notes.description}</h5>
 
-            </Card>
+            </Card> */}
         </>
     )
 }

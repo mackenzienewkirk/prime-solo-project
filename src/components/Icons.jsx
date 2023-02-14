@@ -12,7 +12,8 @@ export default function Icons() {
     }
     return (
         <Box
-        sx={{
+        sx={{marginTop: -4,
+            backgroundColor: '#ffd3db',
         '& > :not(style)': {
             m: 1,
         },
@@ -23,7 +24,7 @@ export default function Icons() {
     href="https://fonts.googleapis.com/icon?family=Material+Icons"
 />
     <Icon sx={{ 
-        color: '#dda83f',
+        color: '#8c3839',
         paddingLeft: 70,
         margin: 5,
         fontSize: 30}} onClick={showAddEndeavor}>add_circle</Icon>
