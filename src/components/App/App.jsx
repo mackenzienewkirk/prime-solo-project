@@ -53,7 +53,7 @@ function App() {
 
           <Route
             exact
-            path="/edit"
+            path="/endeavor/edit/:id"
           >
             <EditEndeavor />
           </Route>

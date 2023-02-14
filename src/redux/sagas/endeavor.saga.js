@@ -29,33 +29,33 @@ function* fetchEndeavorDetails(action) {
     }
 }
 
-function* fetchNotes() {
-    try {
+// function* fetchNotes() {
+//     try {
 
-        const response = yield axios.get('/api/notes');
+//         const response = yield axios.get('/api/notes');
 
-        yield put({ type: 'SET_NOTES', payload: response.data });
-    } catch (error) {
-        console.log('could not find', error);
-    }
-}
+//         yield put({ type: 'SET_NOTES', payload: response.data });
+//     } catch (error) {
+//         console.log('could not find', error);
+//     }
+// }
 
-function* fetchNotesDetails(action) {
-    console.log(action.payload);
-    const notesId = action.payload;
-    try {
-        const notesDetailsRes = yield axios({
-        method: 'GET',
-        url: `/api/notes/${notesId}`
-    })
-    yield put({
-        type: 'SET_NOTES_DETAILS',
-        payload: notesDetailsRes.data 
-    })
-    } catch (err) {
-    console.log('fetchNotesDetails fail:', err);
-    }
-}
+// function* fetchNotesDetails(action) {
+//     console.log(action.payload);
+//     const notesId = action.payload;
+//     try {
+//         const notesDetailsRes = yield axios({
+//         method: 'GET',
+//         url: `/api/notes/${notesId}`
+//     })
+//     yield put({
+//         type: 'SET_NOTES_DETAILS',
+//         payload: notesDetailsRes.data 
+//     })
+//     } catch (err) {
+//     console.log('fetchNotesDetails fail:', err);
+//     }
+// }
 
 function* addEndeavor(action) {
     console.log(action.payload);
@@ -105,12 +105,14 @@ function* deleteEndeavor(action) {
 }
 
 function* fetchEndeavorToEdit(action) {
+    console.log('action.payload', action.payload);
     const idOfEndeavorToEdit = action.payload;
     
     const response = yield axios({
         method: 'GET',
-        url: `/endeavor/${idOfEndeavorToEdit}`
+        url: `/api/endeavor/${idOfEndeavorToEdit}`
     })
+    console.log(response.data);
     yield put({
         type: 'SET_ENDEAVOR_TO_EDIT',
         payload: response.data
@@ -121,7 +123,7 @@ function* updateEndeavor(action) {
     const editedEndeavor = action.payload;
     yield axios({
         method: 'PUT',
-        url: `/endeavor/${editedEndeavor.id}`,
+        url: `/api/endeavor/${editedEndeavor.id}`,
         data: editedEndeavor
     })
 

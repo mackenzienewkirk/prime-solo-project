@@ -15,7 +15,7 @@ function EndeavorDetails(endeavor) {
     const dispatch = useDispatch();
     const history = useHistory();
     const endeavor_details = useSelector(store => store.endeavor_details)
-    const notes = useSelector(store => store.notes)
+    // const notes = useSelector(store => store.notes)
 
     useEffect(() => {
         dispatch({
@@ -36,7 +36,8 @@ function EndeavorDetails(endeavor) {
     // }
 
     const editEndeavor = () => {
-        history.push(`/edit`);
+        console.log('endeavor_details for edit search',endeavor_details);
+        history.push(`/endeavor/edit/${endeavor_details.id}`);
     }
 
     

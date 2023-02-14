@@ -6,6 +6,7 @@ import Icons from '../Icons';
 import { Grid } from '@mui/material';
 import { MoveDown } from '@mui/icons-material';
 import './EndeavorPage.css';
+import { Box } from '@mui/system';
 
 function EndeavorPage() {
     const dispatch = useDispatch();

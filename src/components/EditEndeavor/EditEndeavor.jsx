@@ -1,6 +1,8 @@
 import { useParams, useHistory } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Input } from '@mui/material';
+import { Card } from '@mui/material';
 
 function EditEndeavor() {
 
@@ -8,7 +10,7 @@ function EditEndeavor() {
     const dispatch = useDispatch();
     const history = useHistory();
 
-    const endeavorToEdit = useSelector((store) => store.endeavorToEdit);
+    const endeavorToEdit = useSelector((store) => store.edit_endeavor);
     
 
     useEffect(() => {
@@ -16,11 +18,13 @@ function EditEndeavor() {
 
         dispatch({
             type: 'FETCH_ENDEAVOR_TO_EDIT',
+            payload: params.id
         })
         
     }, [])
 
     const handleInputChange = (evt) => {
+        console.log(endeavorToEdit);
         dispatch({
             type: 'SET_ENDEAVOR_TO_EDIT',
         })
@@ -35,49 +39,96 @@ function EditEndeavor() {
         history.push('/endeavor');
     }
     return(
+        <Card sx={{
+            color: '#2b4743',
+            background: '#FAFAFA',
+            border: 10,
+            borderColor:'#FFD353',
+            borderWidth: 3,
+            fontFamily: 'Alegreya',
+            maxWidth: 1000,
+            marginTop: 6,
+            marginBottom: 6,
+            marginLeft: 4,
+            marginRight: 4,
+            padding: 2,
+            lineHeight: 2,
+    }}>
         <div>
-            <h2> Edit Endeavor </h2>
-
-            <form>
-        <input 
-            type="title"
+            <h2> Edit Endeavor: {endeavorToEdit.title} </h2>
+        <form>
+            <Input sx={{
+            backgroundColor: '#ffd3db',
+            color: '#2b4743',
+            padding: .5,
+            marginTop: 1,
+            borderRadius: 2,
+        }}
+            title="Title"
+            type="text"
             value={endeavorToEdit.title || ''}
-            onChange={(event) => dispatch({type: 'EDIT_ENDEAVOR',payload: event.target.value})}
-        />
-        <input 
-            type="text"
-            value={endeavorToEdit.budget || ''}
-            onChange={(event) => dispatch({type: 'EDIT_ENDEAVOR',payload: event.target.value})}
-        />
-        <input 
-            type="text"
-            value={endeavorToEdit.materials || ''}
-            onChange={(event) => dispatch({type: 'EDIT_ENDEAVOR',payload: event.target.value})}
-        />
-        <input 
-            type="text"
-            value={endeavorToEdit.inspiration || ''}
-            onChange={(event) => dispatch({type: 'EDIT_ENDEAVOR',payload: event.target.value})}
-        />
-        <input 
-            type="text"
-            value={endeavorToEdit.description || ''}
-            onChange={(event) => dispatch({type: 'EDIT_ENDEAVOR',payload: event.target.value})}
-        />
-        <input 
-            type="text"
-            value={endeavorToEdit.end_goal || ''}
-            onChange={(event) => dispatch({type: 'EDIT_ENDEAVOR',payload: event.target.value})}
-        />
-        
-        <input 
+            onChange={handleInputChange}
+        /> 
+            <Input sx={{
+            backgroundColor: '#ffd3db',
+            color: '#2b4743',
+            padding: .5,
+            marginTop: 1,
+            borderRadius: 2,
+        }}
             type="text"
             value={endeavorToEdit.budget || ''}
             onChange={handleInputChange}
-        />
+        /> 
+            <Input sx={{
+            backgroundColor: '#ffd3db',
+            color: '#2b4743',
+            padding: .5,
+            marginTop: 1,
+            borderRadius: 2,
+        }}
+            type="text"
+            value={endeavorToEdit.materials || ''}
+            onChange={handleInputChange}
+        /> 
+            <Input sx={{
+            backgroundColor: '#ffd3db',
+            color: '#2b4743',
+            padding: .5,
+            marginTop: 1,
+            borderRadius: 2,
+        }}
+            type="text"
+            value={endeavorToEdit.inspiration || ''}
+            onChange={handleInputChange}
+        /> 
+            <Input sx={{
+            backgroundColor: '#ffd3db',
+            color: '#2b4743',
+            padding: .5,
+            marginTop: 1,
+            borderRadius: 2,
+        }}
+            type="text"
+            value={endeavorToEdit.description || ''}
+            onChange={handleInputChange}
+        /> 
+            <Input sx={{
+            backgroundColor: '#ffd3db',
+            color: '#2b4743',
+            padding: .5,
+            marginTop: 1,
+            borderRadius: 2,
+        }}
+            type="text"
+            value={endeavorToEdit.end_goal || ''}
+            onChange={handleInputChange}
+        /> 
+        
         <button onClick={handleSubmit}>Submit</button>
     </form>
     </div>
+    </Card>
     )
 }
 
