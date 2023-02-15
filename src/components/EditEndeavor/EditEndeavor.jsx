@@ -23,10 +23,51 @@ function EditEndeavor() {
         
     }, [])
 
-    const handleInputChange = (evt) => {
+    const handleTitleChange = (evt) => {
         console.log(endeavorToEdit);
         dispatch({
-            type: 'SET_ENDEAVOR_TO_EDIT',
+            type: 'SET_TITLE',
+            payload: evt.target.value
+        })
+    }
+
+    const handleBudgetChange = (evt) => {
+        console.log(endeavorToEdit);
+        dispatch({
+            type: 'SET_BUDGET',
+            payload: evt.target.value
+        })
+    }
+
+    const handleMaterialsChange = (evt) => {
+        console.log(endeavorToEdit);
+        dispatch({
+            type: 'SET_MATERIALS',
+            payload: evt.target.value
+        })
+    }
+
+    const handleInspirationChange = (evt) => {
+        console.log(endeavorToEdit);
+        dispatch({
+            type: 'SET_INSPIRATION',
+            payload: evt.target.value
+        })
+    }
+
+    const handleDescriptionChange = (evt) => {
+        console.log(endeavorToEdit);
+        dispatch({
+            type: 'SET_DESCRIPTION',
+            payload: evt.target.value
+        })
+    }
+
+    const handleEndGoalChange = (evt) => {
+        console.log(endeavorToEdit);
+        dispatch({
+            type: 'SET_END_GOAL',
+            payload: evt.target.value
         })
     }
     
@@ -38,6 +79,7 @@ function EditEndeavor() {
         })
         history.push('/endeavor');
     }
+
     return(
         <Card sx={{
             color: '#2b4743',
@@ -64,11 +106,12 @@ function EditEndeavor() {
             padding: .5,
             marginTop: 1,
             borderRadius: 2,
+            width: 300
         }}
             title="Title"
             type="text"
             value={endeavorToEdit.title || ''}
-            onChange={handleInputChange}
+            onChange={handleTitleChange}
         /> 
         <div>Budget:</div>
             <Input sx={{
@@ -77,10 +120,11 @@ function EditEndeavor() {
             padding: .5,
             marginTop: 1,
             borderRadius: 2,
+            width: 300
         }}
             type="text"
             value={endeavorToEdit.budget || ''}
-            onChange={handleInputChange}
+            onChange={handleBudgetChange}
         /> 
         <div>Materials:</div>
             <Input sx={{
@@ -89,10 +133,11 @@ function EditEndeavor() {
             padding: .5,
             marginTop: 1,
             borderRadius: 2,
+            width: 300
         }}
             type="text"
             value={endeavorToEdit.materials || ''}
-            onChange={handleInputChange}
+            onChange={handleMaterialsChange}
         /> 
         <div>Inspiration:</div>
             <Input sx={{
@@ -101,10 +146,11 @@ function EditEndeavor() {
             padding: .5,
             marginTop: 1,
             borderRadius: 2,
+            width: 300
         }}
             type="text"
             value={endeavorToEdit.inspiration || ''}
-            onChange={handleInputChange}
+            onChange={handleInspirationChange}
         /> 
         <div>Description:</div>
             <Input sx={{
@@ -113,10 +159,11 @@ function EditEndeavor() {
             padding: .5,
             marginTop: 1,
             borderRadius: 2,
+            width: 300
         }}
             type="text"
             value={endeavorToEdit.description || ''}
-            onChange={handleInputChange}
+            onChange={handleDescriptionChange}
         /> 
         <div>End Goal:</div>
             <Input sx={{
@@ -125,11 +172,15 @@ function EditEndeavor() {
             padding: .5,
             marginTop: 1,
             borderRadius: 2,
+            width: 300
         }}
             type="text"
             value={endeavorToEdit.end_goal || ''}
-            onChange={handleInputChange}
+            onChange={handleEndGoalChange}
         /> 
+        <br>
+
+        </br>
         <div>
         <button onClick={handleSubmit}>Submit</button>
         </div>
