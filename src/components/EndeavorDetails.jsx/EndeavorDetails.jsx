@@ -126,11 +126,6 @@ function EndeavorDetails(endeavor) {
         backgroundColor: '#CCFF00'
     }} onClick={() => completeEndeavor(endeavor.id)}>Complete</Button>
             </Card>
-            {/* <Card>
-                <h4>{notes.title}</h4>
-                <h5>{notes.description}</h5>
-
-            </Card> */}
         </>
     )
 }

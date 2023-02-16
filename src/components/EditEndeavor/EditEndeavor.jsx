@@ -99,15 +99,15 @@ function EditEndeavor() {
     }}>
         <div>
             <Card sx={{
-              width: 400,
-              padding: 1,
-              color: '#FFD30B',
-              background: '#46629A',
-              textAlign: 'center',
-              fontSize: 20,
-              marginBottom: 2,
-              marginLeft: 2,
-              marginTop: 2
+                width: 400,
+                padding: 1,
+                color: '#FFD30B',
+                background: '#46629A',
+                textAlign: 'center',
+                fontSize: 20,
+                marginBottom: 2,
+                marginLeft: 2,
+                marginTop: 2
 
             }}> Edit Endeavor: {endeavorToEdit.title} </Card>
         <form>
@@ -122,6 +122,7 @@ function EditEndeavor() {
             color: '#2b4743',
             padding: .5,
             marginTop: 1,
+            marginBottom: 2,
             borderRadius: 2,
             width: 400
         }}
@@ -136,6 +137,7 @@ function EditEndeavor() {
             color: '#2b4743',
             padding: .5,
             marginTop: 1,
+            marginBottom: 2,
             borderRadius: 2,
             width: 300
         }}
@@ -149,6 +151,7 @@ function EditEndeavor() {
             color: '#2b4743',
             padding: .5,
             marginTop: 1,
+            marginBottom: 2,
             borderRadius: 2,
             width: 300
         }}
@@ -162,6 +165,7 @@ function EditEndeavor() {
             color: '#2b4743',
             padding: .5,
             marginTop: 1,
+            marginBottom: 2,
             borderRadius: 2,
             width: 600
         }}
@@ -175,6 +179,7 @@ function EditEndeavor() {
             color: '#2b4743',
             padding: .5,
             marginTop: 1,
+            marginBottom: 2,
             borderRadius: 2,
             width: 600
         }}
@@ -188,6 +193,7 @@ function EditEndeavor() {
             color: '#2b4743',
             padding: .5,
             marginTop: 1,
+            marginBottom: 2,
             borderRadius: 2,
             width: 600
         }}
