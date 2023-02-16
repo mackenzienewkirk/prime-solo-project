@@ -10,7 +10,15 @@ router.get('/', (req, res) => {
   // const currentUserID = req.user.id;
   console.log('GET /api/endeavor');
 
-  const sqlQuery = `
+  const sqlQuery = 
+  // `
+  // SELECT "endeavor"."id", "endeavor"."title", "endeavor"."budget", "endeavor"."materials", 
+  // "endeavor"."inspiration", "endeavor"."description", "endeavor"."end_goal", "user"."username" 
+  // FROM "endeavor"
+  // INNER JOIN "user" 
+  // ON "endeavor"."user_id" = "user"."id" 
+  // WHERE "user_id" = $1;`;
+  `
   SELECT * FROM "endeavor"
   ORDER BY "id"
   `

@@ -12,7 +12,7 @@ export default function Icons() {
     }
     return (
         <Box
-        sx={{fontSize: 24,
+        sx={{
         '& > :not(style)': {
             m: 1,
         },
@@ -24,11 +24,11 @@ export default function Icons() {
 />
     <Icon sx={{ 
         color: '#FFD30B',
-        paddingLeft: 63,
-        marginLeft: 50,
+        paddingLeft: 110,
+        marginLeft: 70,
         display: 'inline-flex',
         margin: 6,
-        fontSize: 40}} onClick={showAddEndeavor}>add_circle</Icon>
+        fontSize: 60}} onClick={showAddEndeavor}>add_circle</Icon>
     
     </Box>
 );

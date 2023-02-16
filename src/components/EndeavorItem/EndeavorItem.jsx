@@ -12,6 +12,7 @@ import { useDispatch } from 'react-redux';
 function EndeavorItem({ endeavor }) {
     const history = useHistory();
     const dispatch = useDispatch();
+    
 
     const showEndeavorDetails = () => {
         history.push(`/endeavor/${endeavor.id}`);
@@ -22,6 +23,10 @@ function EndeavorItem({ endeavor }) {
         type: 'DELETE_ENDEAVOR',
         payload: id
         })
+    }
+
+    const completeEndeavor = () => {
+        history.push(`/user`)
     }
     
     return (
@@ -48,7 +53,7 @@ function EndeavorItem({ endeavor }) {
         textAlign: 'left',
         fontSize: 22,
         backgroundColor: '#CCFF00',
-        color: '#46629A',
+        color: '#410064',
         lineHeight: 1,
         fontFamily: 'Rugrats Sans',
         padding: 2,

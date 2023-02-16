@@ -40,7 +40,13 @@ function EndeavorDetails(endeavor) {
         history.push(`/endeavor/edit/${endeavor_details.id}`);
     }
 
-    
+    const completeEndeavor = () => {
+        history.push(`/user`)
+    }
+
+    const backToEndeavors = () => {
+        history.push(`/endeavor`)
+    }
 
     return (
         <>
@@ -78,7 +84,7 @@ function EndeavorDetails(endeavor) {
         >
             <Card sx={{
                 textAlign: 'left',
-                fontSize: 22,
+                fontSize: 25,
                 backgroundColor: '#CCFF00',
                 color: '#46629A',
                 lineHeight: 1,
@@ -91,7 +97,7 @@ function EndeavorDetails(endeavor) {
             <br></br>
             <Card sx={{
                 textAlign: 'left',
-                fontSize: 18,
+                fontSize: 22,
                 backgroundColor: '#FFFFFF',
                 color: '#46629A',
                 lineHeight: 1,
@@ -125,6 +131,12 @@ function EndeavorDetails(endeavor) {
         padding: 1,
         backgroundColor: '#CCFF00'
     }} onClick={() => completeEndeavor(endeavor.id)}>Complete</Button>
+    <Button sx={{
+        color: '#336699',
+        padding: 1,
+        backgroundColor: '#CCFF00',
+        marginLeft: 65
+    }} onClick={() => backToEndeavors(endeavor.id)}>Back</Button>
             </Card>
         </>
     )
