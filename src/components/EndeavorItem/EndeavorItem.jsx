@@ -26,14 +26,15 @@ function EndeavorItem({ endeavor }) {
     
     return (
         <Card sx={{ 
-            maxWidth: 280,
-            color: '#336699',
-            background: '#FAFAFA',
+            width: 280,
+            height: 120,
+            backgroundColor: '#ffccff',
+            color: '#46629A',
             gridTemplateColumns: 2,
             padding: 1,
             elevation: 5,
             boxShadow: 2,
-            borderRadius: 6
+            borderRadius: 4
 
             }}>
     {/* <CardMedia
@@ -43,26 +44,49 @@ function EndeavorItem({ endeavor }) {
         width="300"
         image='images/in_the_works_logo.png'
     /> */}
-    <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
+    <Card sx={{
+        textAlign: 'left',
+        fontSize: 22,
+        backgroundColor: '#CCFF00',
+        color: '#46629A',
+        lineHeight: 1,
+        fontFamily: 'Rugrats Sans',
+        padding: 2,
+        lineHeight: 1,
+        textAlign: 'center',
+        borderRadius: 4
+    }}>
+        {/* <Typography gutterBottom variant="h5" component="div"> */}
         {endeavor.title}
-        </Typography>
-        <Typography sx={{variant: "body2", 
+        {/* </Typography> */}
+        {/* <Typography sx={{variant: "body2", 
                     color: "text.secondary",
                     }}>
-        </Typography>
-    </CardContent>
-    <CardActions >
+        </Typography> */}
+    </Card>
+    {/* <CardActions > */}
         <Button sx={{
-        color: '#336699'
+        color: '#336699',
+        fontFamily: 'Rugrats Sans',
+        padding: .5,
+        margin: 1,
+        
     }} onClick={showEndeavorDetails} size="small">Details</Button>
         <Button sx={{
-        color: '#336699'
+        color: '#336699',
+        fontFamily: 'Rugrats Sans',
+        padding: .5, 
+        margin: 1,
+        
     }} onClick={() => completeEndeavor(endeavor.id)}>Complete</Button>
         <Button sx={{
-        color: '#336699'
+        color: '#336699',
+        fontFamily: 'Rugrats Sans',
+        padding: .5,
+        margin: 1,
+        
     }} onClick={() => deleteEndeavor(endeavor.id)}>Delete</Button>
-    </CardActions>
+    {/* </CardActions> */}
     </Card>
         // <div>
         // <button onClick={showEndeavorDetails}>

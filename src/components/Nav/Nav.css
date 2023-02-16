@@ -6,6 +6,7 @@
 
   margin: 0 0 30px;
   background-color: #46629A;
+  /* background-image: linear-gradient(to right, #46629A, #ffccff); */
   overflow: hidden;
 }
 
@@ -48,4 +49,5 @@ img {
   padding-top: 6px;
   height: 60px;
   width: 100px;
+  border-radius: 10;
 }

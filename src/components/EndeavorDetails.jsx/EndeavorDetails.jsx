@@ -49,7 +49,7 @@ function EndeavorDetails(endeavor) {
             elevation: 5,
             color: '#FFD30B',
             background: '#46629A',
-            maxWidth: 700,
+            maxWidth: 800,
             marginTop: 6,
             marginBottom: 6,
             marginLeft: 8,
@@ -64,35 +64,66 @@ function EndeavorDetails(endeavor) {
             elevation: 5,
             backgroundColor: '#ffccff',
             color: '#46629A',
-            maxWidth: 700,
+            maxWidth: 800,
             marginTop: 6,
             marginBottom: 6,
             marginLeft: 8,
             marginRight: 8,
-            padding: 2,
+            padding: 3,
             lineHeight: 1,
             textAlign: 'left',
             borderRadius: 6
 
         }}
         >
-            <h2>{endeavor_details.title}</h2>
+            <Card sx={{
+                textAlign: 'left',
+                fontSize: 22,
+                backgroundColor: '#CCFF00',
+                color: '#46629A',
+                lineHeight: 1,
+                fontFamily: 'Rugrats Sans',
+                padding: 1.5,
+                lineHeight: 1,
+                textAlign: 'left',
+                borderRadius: 4
+            }}>{endeavor_details.title}</Card >
+            <br></br>
+            <Card sx={{
+                textAlign: 'left',
+                fontSize: 18,
+                backgroundColor: '#FFFFFF',
+                color: '#46629A',
+                lineHeight: 1,
+                fontFamily: 'Rugrats Sans',
+                padding: 1.5,
+                lineHeight: 1,
+                textAlign: 'left',
+                borderRadius: 4,
+                marginBottom: 2
+            }}>
             
                 <p>Budget: {endeavor_details.budget}</p>
                 <p>Materials: {endeavor_details.materials}</p>
                 <p>Inspiration: {endeavor_details.inspiration}</p>
                 <p>Description: {endeavor_details.description}</p>
                 <p>End Goal: {endeavor_details.end_goal}</p>
+                </Card>
                 {/* <li>{endeavor_details.is_done}</li> */}
             {/* <Button sx={{
         color: '#336699',
         textAlign: 'center'
     }} onClick={() => addNote(endeavor.id)}>Add A Note</Button> */}
     <Button sx={{
-        color: '#336699'
+        color: '#336699',
+        padding: 1,
+        backgroundColor: '#CCFF00',
+        marginRight: 1
     }} onClick={() => editEndeavor(endeavor.id)}>Edit</Button>
     <Button sx={{
-        color: '#336699'
+        color: '#336699',
+        padding: 1,
+        backgroundColor: '#CCFF00'
     }} onClick={() => completeEndeavor(endeavor.id)}>Complete</Button>
             </Card>
             {/* <Card>
