@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Card } from '@mui/material';
+import { Grid } from '@mui/material';
 import { Input } from '@mui/material';
 import { useHistory } from 'react-router-dom';
 
@@ -54,14 +55,17 @@ function AddEndeavor() {
             marginBottom: 6,
             marginLeft: 4,
             marginRight: 4,
-            padding: 2,
+            padding: 1,
             lineHeight: 2,
     }}>
     <div className="container">
       <div>
         <p>Create a new endeavor</p>
       </div>
-        <form onSubmit={handleSubmit}>
+      <Card sx={{
+                  padding: 2,
+                  gap: 3,
+      }}>
         <Input sx={{
           backgroundColor: '#ffd3db',
           color: '#2b4743',
@@ -130,7 +134,8 @@ function AddEndeavor() {
 
 
 <button onClick={handleSubmit}>Create</button>
-</form>
+</Card>
+
     </div>
     </Card>
   );

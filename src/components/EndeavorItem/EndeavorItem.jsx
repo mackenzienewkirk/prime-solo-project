@@ -26,17 +26,23 @@ function EndeavorItem({ endeavor }) {
     
     return (
         <Card sx={{ 
-            maxWidth: 345,
+            maxWidth: 280,
             color: '#336699',
             background: '#FAFAFA',
-            gridTemplateColumns: 5
+            gridTemplateColumns: 2,
+            padding: 1,
+            elevation: 5,
+            boxShadow: 2,
+            borderRadius: 6
+
             }}>
-    <CardMedia
+    {/* <CardMedia
         component="img"
         alt="title for id"
-        height="140"
-        image='images/corner_shelf.jpeg'
-    />
+        height="100"
+        width="300"
+        image='images/in_the_works_logo.png'
+    /> */}
     <CardContent>
         <Typography gutterBottom variant="h5" component="div">
         {endeavor.title}
@@ -49,7 +55,7 @@ function EndeavorItem({ endeavor }) {
     <CardActions >
         <Button sx={{
         color: '#336699'
-    }} onClick={showEndeavorDetails} size="small">Show Endeavor</Button>
+    }} onClick={showEndeavorDetails} size="small">Details</Button>
         <Button sx={{
         color: '#336699'
     }} onClick={() => completeEndeavor(endeavor.id)}>Complete</Button>

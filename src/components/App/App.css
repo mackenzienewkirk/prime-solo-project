@@ -8,7 +8,7 @@ body {
   font-family: 'Rugrats Sans';
   margin: 0px;
   background-color: #FBFBFB ;
-  color: #2b4743;
+  color: #46629A;
 }
 
 /* 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif */
@@ -37,10 +37,10 @@ Button
 .btn {
   display: inline-block;
   padding: 10px 20px;
-  border-color: #014041;
+  border-color: #46629A;
   border-width: 1px 1px 3px;
   border-radius: 4px;
-  background-color: #2b4743;
+  background-color: #46629A;
   color: #ffccff;
   font-size: 1.1rem;
   outline: 0;
@@ -63,7 +63,7 @@ Button
 }
 
 .btn:hover {
-  background-color: #245586;
+  background-color: #354A72;
   text-decoration: none;
 }
 

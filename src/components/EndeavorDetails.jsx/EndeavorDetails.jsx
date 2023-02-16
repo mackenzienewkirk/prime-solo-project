@@ -47,22 +47,8 @@ function EndeavorDetails(endeavor) {
         <h1>
         <Card sx={{
             elevation: 5,
-            color: '#2b4743',
-            background: '#ffd3db',
-            maxWidth: 700,
-            marginTop: 6,
-            marginBottom: 6,
-            marginLeft: 20,
-            marginRight: 20,
-            padding: 2,
-            lineHeight: 1,
-            textAlign: 'center'
-        }}> Current Endeavor </Card>
-        </h1>
-        <Card sx={{
-            elevation: 5,
-            color: '#2b4743',
-            background: '#cedeeb',
+            color: '#FFD30B',
+            background: '#46629A',
             maxWidth: 700,
             marginTop: 6,
             marginBottom: 6,
@@ -70,7 +56,23 @@ function EndeavorDetails(endeavor) {
             marginRight: 8,
             padding: 2,
             lineHeight: 1,
-            textAlign: 'center'
+            textAlign: 'left',
+            borderRadius: 6
+        }}> Current Endeavor </Card>
+        </h1>
+        <Card sx={{
+            elevation: 5,
+            backgroundColor: '#ffccff',
+            color: '#46629A',
+            maxWidth: 700,
+            marginTop: 6,
+            marginBottom: 6,
+            marginLeft: 8,
+            marginRight: 8,
+            padding: 2,
+            lineHeight: 1,
+            textAlign: 'left',
+            borderRadius: 6
 
         }}
         >
