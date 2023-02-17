@@ -34,6 +34,8 @@ function UserPage() {
         width: 200,
         padding: 2,
         marginLeft: 35,
+        backgroundColor: '#AEC9FF',
+            color: '#46629A',
         marginTop: -24,
         marginBottom: 40
         

@@ -22,6 +22,8 @@ import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import Note from '../Note/Note';
 import EditEndeavor from '../EditEndeavor/EditEndeavor';
+import AboutPage from '../AboutPage';
+import Home from '../Home/Home';
 
 import './App.css';
 
@@ -40,7 +42,7 @@ function App() {
         <Nav />
         <Switch>
           {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
-          <Redirect exact from="/" to="/endeavor" />
+          <Redirect exact from="/" to="/home" />
 
           {/* Visiting localhost:3000/about will show the about page. */}
           <Route
@@ -83,6 +85,22 @@ function App() {
             path="/endeavor"
           >
             <EndeavorPage />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            // logged in shows InfoPage else shows LoginPage
+            exact
+            path="/home"
+          >
+            <Home />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            // logged in shows InfoPage else shows LoginPage
+            exact
+            path="/about"
+          >
+            <AboutPage />
           </ProtectedRoute>
 
           <ProtectedRoute exact path="/endeavor/:id">

@@ -33,7 +33,7 @@ function EndeavorItem({ endeavor }) {
         <Card sx={{ 
             width: 280,
             height: 120,
-            backgroundColor: '#ffccff',
+            backgroundColor: '#AEC9FF',
             color: '#46629A',
             gridTemplateColumns: 2,
             padding: 1,
@@ -52,7 +52,7 @@ function EndeavorItem({ endeavor }) {
     <Card sx={{
         textAlign: 'left',
         fontSize: 22,
-        backgroundColor: '#CCFF00',
+        backgroundColor: '#FFFFFF',
         color: '#410064',
         lineHeight: 1,
         fontFamily: 'Rugrats Sans',
@@ -71,21 +71,21 @@ function EndeavorItem({ endeavor }) {
     </Card>
     {/* <CardActions > */}
         <Button sx={{
-        color: '#336699',
+        color: '#46629A',
         fontFamily: 'Rugrats Sans',
         padding: .5,
         margin: 1,
         
     }} onClick={showEndeavorDetails} size="small">Details</Button>
         <Button sx={{
-        color: '#336699',
+        color: '#46629A',
         fontFamily: 'Rugrats Sans',
         padding: .5, 
         margin: 1,
         
     }} onClick={() => completeEndeavor(endeavor.id)}>Complete</Button>
         <Button sx={{
-        color: '#336699',
+        color: '#46629A',
         fontFamily: 'Rugrats Sans',
         padding: .5,
         margin: 1,
