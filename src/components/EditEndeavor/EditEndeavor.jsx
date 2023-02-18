@@ -71,6 +71,14 @@ function EditEndeavor() {
             payload: evt.target.value
         })
     }
+
+    const handleNotesChange = (evt) => {
+        console.log(endeavorToEdit);
+        dispatch({
+            type: 'SET_NOTES',
+            payload: evt.target.value
+        })
+    }
     
     const handleSubmit = (evt) => {
         evt.preventDefault();
@@ -201,6 +209,21 @@ function EditEndeavor() {
             value={endeavorToEdit.description || ''}
             onChange={handleDescriptionChange}
         /> 
+
+        <div>Notes: </div>
+                    <Input sx={{
+                    backgroundColor: '#ffd3db',
+                    color: '#2b4743',
+                    padding: .5,
+                    marginTop: 1,
+                    marginBottom: 2,
+                    borderRadius: 2,
+                    width: 600
+                }}
+                    type="text"
+                    value={endeavorToEdit.notes || ''}
+                    onChange={handleNotesChange}
+                /> 
         
         <br>
 

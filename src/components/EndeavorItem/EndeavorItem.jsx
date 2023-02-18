@@ -13,11 +13,12 @@ function EndeavorItem({ endeavor }) {
     const history = useHistory();
     const dispatch = useDispatch();
     
-
+//On click of 'Details' takes you to the details page
     const showEndeavorDetails = () => {
         history.push(`/endeavor/${endeavor.id}`);
     }
 
+//On click of 'Delete' deletes endeavor
     const deleteEndeavor = (id) => {
         dispatch({
         type: 'DELETE_ENDEAVOR',
@@ -25,9 +26,6 @@ function EndeavorItem({ endeavor }) {
         })
     }
 
-    const completeEndeavor = () => {
-        history.push(`/user`)
-    }
     
     return (
         <Card sx={{ 
@@ -61,34 +59,25 @@ function EndeavorItem({ endeavor }) {
         textAlign: 'center',
         borderRadius: 4
     }}>
-        {/* <Typography gutterBottom variant="h5" component="div"> */}
         {endeavor.title}
-        {/* </Typography> */}
-        {/* <Typography sx={{variant: "body2", 
-                    color: "text.secondary",
-                    }}>
-        </Typography> */}
+        
     </Card>
     {/* <CardActions > */}
         <Button sx={{
         color: '#46629A',
         fontFamily: 'Rugrats Sans',
+        fontSize: 18,
         padding: .5,
-        margin: 1,
+        marginLeft: 3,
         
     }} onClick={showEndeavorDetails} size="small">Details</Button>
-        <Button sx={{
-        color: '#46629A',
-        fontFamily: 'Rugrats Sans',
-        padding: .5, 
-        margin: 1,
         
-    }} onClick={() => completeEndeavor(endeavor.id)}>Complete</Button>
         <Button sx={{
         color: '#46629A',
         fontFamily: 'Rugrats Sans',
-        padding: .5,
-        margin: 1,
+        fontSize: 18,
+        padding: 1,
+        marginLeft: 7,
         
     }} onClick={() => deleteEndeavor(endeavor.id)}>Delete</Button>
     {/* </CardActions> */}

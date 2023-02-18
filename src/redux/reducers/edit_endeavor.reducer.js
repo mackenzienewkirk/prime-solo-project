@@ -26,6 +26,10 @@ const endeavorToEdit = (state = {}, action) => {
 
         return {...state, end_goal: action.payload}
     }
+    else if (action.type === 'SET_NOTES') {
+
+        return {...state, notes: action.payload}
+    }
     return state;
 }
 

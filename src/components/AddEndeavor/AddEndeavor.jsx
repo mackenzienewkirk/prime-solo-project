@@ -16,6 +16,7 @@ function AddEndeavor() {
   const [inspirationInput, setInspirationInput] = useState('');
   const [descriptionInput, setDescriptionInput] = useState('');
   const [end_goalInput, setEnd_goalInput] = useState('');
+  const [notesInput, setNotesInput] = useState('');
   
   const dispatch = useDispatch();
   const history = useHistory();
@@ -30,7 +31,8 @@ function AddEndeavor() {
               materialsInput,
               inspirationInput,
               descriptionInput,
-              end_goalInput}
+              end_goalInput,
+              notesInput}
               
     })
     setTitleInput('');
@@ -39,8 +41,19 @@ function AddEndeavor() {
     setInspirationInput('');
     setDescriptionInput('');
     setEnd_goalInput('');
+    setNotesInput('');
 
     history.push(`/endeavor`);
+}
+
+const prefillForm = () => {
+  setTitleInput('Build a Bird Bath');
+  setBudgetInput('30');
+  setMaterialsInput('Wood, Screws, Screwdriver, Paint, Water');
+  setInspirationInput('Birdfeeder Goal')
+  setDescriptionInput('I want to build a matching bird bath for the current bird bath project! It will look like a retro swimming pool.');
+  setEnd_goalInput('7/5/23');
+  setNotesInput('I hope it will be as good as HGTV carpentry.');
 }
 
   return (
@@ -80,8 +93,7 @@ function AddEndeavor() {
               marginLeft: 2,
               marginTop: 2
 
-            }}
-            >Create a new endeavor</Card>
+            }} onClick={prefillForm}>Create a new endeavor </Card>
             
         <Input sx={{
           backgroundColor: '#ffd3db',
@@ -165,6 +177,20 @@ function AddEndeavor() {
         }}onChange={(event) => setDescriptionInput(event.target.value)} 
         placeholder="Description" 
         value={descriptionInput}
+        />
+        <Input sx={{
+          backgroundColor: '#ffd3db',
+          color: '#37004D',
+          padding: .5,
+          marginTop: 1,
+          marginBottom: 2,
+          marginRight: 2,
+          marginLeft: 2,
+          width: 500,
+          borderRadius: 2,
+        }}onChange={(event) => setNotesInput(event.target.value)} 
+        placeholder="Notes" 
+        value={notesInput}
         />
         
 <br></br>

@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 import Card from '@mui/material/Card';
@@ -15,7 +15,7 @@ function EndeavorDetails(endeavor) {
     const dispatch = useDispatch();
     const history = useHistory();
     const endeavor_details = useSelector(store => store.endeavor_details)
-    // const notes = useSelector(store => store.notes)
+    
 
     useEffect(() => {
         dispatch({
@@ -24,16 +24,6 @@ function EndeavorDetails(endeavor) {
         })
     }, [params.id])
 
-    // useEffect(() => {
-    //     dispatch({
-    //         type: 'FETCH_NOTES_DETAILS',
-    //         payload: params.id 
-    //     })
-    // }, [params.id])
-
-    // const addNote = () => {
-    //     history.push(`/addNote`);
-    // }
 
     const editEndeavor = () => {
         console.log('endeavor_details for edit search',endeavor_details);
@@ -114,6 +104,7 @@ function EndeavorDetails(endeavor) {
                 <p>Inspiration: {endeavor_details.inspiration}</p>
                 <p>Description: {endeavor_details.description}</p>
                 <p>End Goal: {endeavor_details.end_goal}</p>
+                <p>Notes: {endeavor_details.notes}</p>
                 </Card>
                 {/* <li>{endeavor_details.is_done}</li> */}
             {/* <Button sx={{
@@ -129,13 +120,14 @@ function EndeavorDetails(endeavor) {
     <Button sx={{
         color: '#336699',
         padding: 1,
+        marginLeft: 3,
         backgroundColor: '#CCFF00'
     }} onClick={() => completeEndeavor(endeavor.id)}>Complete</Button>
     <Button sx={{
         color: '#336699',
         padding: 1,
         backgroundColor: '#CCFF00',
-        marginLeft: 65
+        marginLeft: 62
     }} onClick={() => backToEndeavors(endeavor.id)}>Back</Button>
             </Card>
         </>

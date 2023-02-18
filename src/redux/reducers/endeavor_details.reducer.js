@@ -8,3 +8,6 @@ const endeavorDetails = (state = {}, action) => {
 }
 
 export default endeavorDetails;
+
+//ENDEAVOR/CLEAR_CURRENT: {}; - to clear the previously rendered info for faster update 
+
