@@ -30,20 +30,14 @@ function EndeavorDetails(endeavor) {
         history.push(`/endeavor/edit/${endeavor_details.id}`);
     }
 
-    const completeEndeavor = () => {
-        history.push(`/user`)
-    }
+    // const completeEndeavor = () => {
+    //     history.push(`/user`)
+    // }
 
     const backToEndeavors = () => {
         history.push(`/endeavor`)
     }
 
-    const deleteEndeavor = (id) => {
-        dispatch({
-        type: 'DELETE_ENDEAVOR',
-        payload: id
-        })
-    }
 
     return (
         <>
@@ -124,23 +118,17 @@ function EndeavorDetails(endeavor) {
         backgroundColor: '#CCFF00',
         marginRight: 1
     }} onClick={() => editEndeavor(endeavor.id)}>Edit</Button>
-    <Button sx={{
+    {/* <Button sx={{
         color: '#336699',
         padding: 1,
         marginLeft: 2,
         backgroundColor: '#CCFF00'
-    }} onClick={() => completeEndeavor(endeavor.id)}>Complete</Button>
-    <Button sx={{
-        color: '#336699',
-        padding: 1,
-        marginLeft: 3,
-        backgroundColor: '#CCFF00'
-    }} onClick={() => deleteEndeavor(endeavor.id)}>Delete</Button>
+    }} onClick={() => completeEndeavor(endeavor.id)}>Complete</Button> */}
     <Button sx={{
         color: '#336699',
         padding: 1,
         backgroundColor: '#CCFF00',
-        marginLeft: 48
+        marginLeft: 4
     }} onClick={() => backToEndeavors(endeavor.id)}>Back</Button>
             </Card>
         </>

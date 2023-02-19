@@ -2,17 +2,29 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 // import * as React from 'react';
 import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
-
+import Typography from '@mui/material/Typography';
+import { useDispatch } from 'react-redux';
 
 function EndeavorItem({ endeavor }) {
     const history = useHistory();
+    const dispatch = useDispatch();
     
 //On click of 'Details' takes you to the details page
     const showEndeavorDetails = () => {
         history.push(`/endeavor/${endeavor.id}`);
     }
 
+//On click of 'Delete' deletes endeavor
+    const deleteEndeavor = (id) => {
+        dispatch({
+        type: 'DELETE_ENDEAVOR',
+        payload: id
+        })
+    }
 
     
     return (
@@ -28,7 +40,15 @@ function EndeavorItem({ endeavor }) {
             borderRadius: 4
 
             }}>
+    {/* <CardMedia
+        component="img"
+        alt="title for id"
+        height="100"
+        width="300"
+        image='images/in_the_works_logo.png'
+    /> */}
     <Card sx={{
+        textAlign: 'left',
         fontSize: 22,
         backgroundColor: '#FFFFFF',
         color: '#410064',
@@ -47,13 +67,22 @@ function EndeavorItem({ endeavor }) {
         color: '#46629A',
         fontFamily: 'Rugrats Sans',
         fontSize: 18,
-        textAlign: 'center',
-        marginLeft: 12,
-        marginTop: 2
+        padding: .5,
+        marginLeft: 3,
         
     }} onClick={showEndeavorDetails} size="small">Details</Button>
+        
+        <Button sx={{
+        color: '#46629A',
+        fontFamily: 'Rugrats Sans',
+        fontSize: 18,
+        padding: 1,
+        marginLeft: 7,
+        
+    }} onClick={() => deleteEndeavor(endeavor.id)}>Delete</Button>
     {/* </CardActions> */}
     </Card>
+
 
     )
 

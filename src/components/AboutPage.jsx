@@ -25,7 +25,7 @@ function AboutPage() {
             backgroundColor: '#ffffff',
             color: '#410064',
             fontFamily: 'Rugrats Sans',
-            padding: 3,
+            padding: 2,
             marginLeft: 2,
             marginRight: 50,
             marginTop: -38,
@@ -47,7 +47,12 @@ function AboutPage() {
           <li>Postman</li>
           <li>Node.js</li>
         </ul>
-            <h3>Special thanks to the Vonnegut Cohort, Matt, Josee, my family, and everyone watching!</h3>
+        <h3>Special thanks:</h3>
+            <ul>
+            <li>Vonnegut Cohort and Prime Digital Academy</li>
+            <li>The instructors, Matt, Kris, Key, Kevin, and Vada.</li>
+            <li>Josee, my family, and everyone watching!</li>
+            </ul> 
         </Card>
 </Card>
     )

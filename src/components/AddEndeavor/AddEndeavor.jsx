@@ -53,7 +53,17 @@ const prefillForm = () => {
   setInspirationInput('Birdfeeder Goal')
   setDescriptionInput('I want to build a matching bird bath for the current bird bath project! It will look like a retro swimming pool.');
   setEnd_goalInput('7/5/23');
-  setNotesInput('I hope it will be as good as HGTV carpentry.');
+  setNotesInput('I want it to look like an infinity pool');
+}
+
+const prefillFormJosee = () => {
+  setTitleInput('Crochet a Cat Hat');
+  setBudgetInput('10');
+  setMaterialsInput('Yarn, Crochet Needles, Pattern, Cat');
+  setInspirationInput('An Old Calendar')
+  setDescriptionInput('I want to do a tea part photo shoot with my cats, and it would be much cuter if they had little hats that looked like flowers.');
+  setEnd_goalInput('5/30/23');
+  setNotesInput('They will be pink and green and yellow.');
 }
 
   return (
@@ -89,11 +99,12 @@ const prefillForm = () => {
               background: '#46629A',
               textAlign: 'center',
               fontSize: 20,
-              marginBottom: 2,
-              marginLeft: 2,
-              marginTop: 2
+              marginBottom: 1,
+              marginLeft: 23,
+              marginTop: 4
 
             }} onClick={prefillForm}>Create a new endeavor </Card>
+            <img src='images/embroidery.jpg' className='embroidery2' onClick={prefillFormJosee}></img>
             
         <Input sx={{
           backgroundColor: '#ffd3db',
@@ -109,6 +120,7 @@ const prefillForm = () => {
         placeholder="Title" 
         value={titleInput}
         />
+        {/* <button onClick={prefillFormJosee}></button> */}
         
         <Input sx={{
           backgroundColor: '#ffd3db',

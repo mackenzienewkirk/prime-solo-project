@@ -18,6 +18,8 @@ img {
   max-width: 100%;
 }
 
+/*Images*/
+
 .image2 {
   width:300px;
 height:300px;
@@ -32,6 +34,68 @@ margin-top: 2px;
 
 }
 
+.baking {
+  width:200px;
+height:130px;
+margin-left: -50px;
+margin-top: -50px;
+}
+
+.camping {
+  width:200px;
+height:130px;
+margin-left: 5px;
+margin-top: -50px;
+}
+
+.cooking {
+  width:200px;
+height:130px;
+margin-left: -50px;
+margin-top: -4px;
+}
+
+.donuts {
+  width:200px;
+height:130px;
+margin-left: 5px;
+margin-top: -4px;
+}
+
+.embroidery {
+  width:200px;
+height:130px;
+margin-left: -50px;
+margin-top: -4px;
+}
+
+.embroidery2 {
+  width: 140px;
+height: 100px;
+margin-left: 8px;
+margin-top: -100px;
+}
+
+.gardening {
+  width:200px;
+  height:130px;
+  margin-left: 5px;
+  margin-top: -4px;
+}
+
+.pillow {
+  width: 80px;
+height: 50px;
+margin-left: 500px;
+margin-top: -50px;
+}
+
+.yarn {
+  width: 80px;
+height: 50px;
+margin-left: -540px;
+margin-top: -80px;
+}
 /* --------------------------------------------------------------------------------
 Container
 -------------------------------------------------------------------------------- */

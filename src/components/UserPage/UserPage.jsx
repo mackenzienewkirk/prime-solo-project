@@ -20,16 +20,28 @@ function UserPage() {
 
   return (
     <div className="container">
+      <img src='images/baking.jpg' className='baking'></img>
+      <img src='images/camping.jpg' className='camping'></img>
+      <img src='images/cooking.jpg' className='cooking'></img>
+      <img src='images/donuts.jpg' className='donuts'></img>
+      <img src='images/embroidery.jpg' className='embroidery'></img>
+      <img src='images/gardening.jpg' className='gardening'></img>
+      {/* <img src='images/pillow.jpg' className='pillow'></img>
+      <img src='images/yarn.jpg' className='yarn'></img> */}
       <Card sx={{
-        width: 200,
+        width: 350,
+        height: 200,
+        marginTop: -40,
+        marginLeft: 64,
+        marginRight: 15,
         padding: 2,
         color: '#FFD30B',
             background: '#46629A',
+            
         }}>
           <Card sx={{
             borderRadius: 16,
             marginRight: 8,
-            marginLeft: 8,
             alignProperty: 'center'
           }}>
           </Card>
@@ -38,28 +50,30 @@ function UserPage() {
       <LogOutButton className="btn" />
       </Card>
       <br></br>
-      {/* <Card sx={{
+
+      {/* <br></br>
+      <Card sx={{
         width: 200,
-        padding: 3,
-        marginLeft: 35,
-        backgroundColor: '#AEC9FF',
+        padding: 2,
+        marginLeft: 40,
+        backgroundColor: '#FFD30B',
             color: '#46629A',
-        marginTop: -24,
-        marginBottom: 15
-        
-        }}>
-        </Card> */}
+        marginTop: -7,
+        marginBottom: 10
+        }}><h3>Complete Endeavors:</h3>
+        </Card> 
         <Grid sx={{ 
             display: 'grid',
             gap: 3,
             gridTemplateColumns: 'repeat(3, 2fr)',
             padding: 1,
+            marginLeft: -4,
             elevation: 8
             }}>
             {endeavor?.map(endeavor => (
                 <EndeavorItem key={endeavor.id} endeavor={endeavor} />
             ))}
-        </Grid>
+        </Grid>  */}
     </div>
   );
 }
