@@ -28,7 +28,6 @@ function Home() {
                 lineHeight: 1,
                 fontFamily: 'Rugrats Sans'
             }}>Welcome back, {user.username}!</Card>
-            <img src='images/in_the_works_logo.png' class="homeLogo"></img>
             {/* <Card sx={{
                 textAlign: 'left',
                 fontSize: 18,
@@ -58,7 +57,7 @@ function Home() {
             padding: 4,
             marginLeft: 4,
             marginRight: 60,
-            marginTop: -22,
+            marginTop: 4,
             marginBottom: 20,
             textAlign: 'left',
             borderRadius: 4,
@@ -74,9 +73,9 @@ function Home() {
             backgroundColor: '#ffccff',
             color: '#410064',
             maxWidth: 420,
-            marginTop: -38,
-            marginBottom: 3,
-            marginLeft: 63,
+            marginTop: -74,
+            marginBottom: 60,
+            marginLeft: 64,
             marginRight: 6,
             marginBottom: 6,
             padding: 4,
@@ -85,9 +84,10 @@ function Home() {
             fontSize: 22,
             lineHeight: 1,
             fontFamily: 'Rugrats Sans'
+            
         }}>
-        <h2>Continue into 'Endeavors' to view all of your current projects, or 'Create' to add a new endeavor.</h2>
-        </Card>
+        <img src='images/in_the_works_logo.png' class="homeLogo"></img>
+        </Card> 
         </div>
     )
 }

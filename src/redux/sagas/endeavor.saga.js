@@ -29,33 +29,6 @@ function* fetchEndeavorDetails(action) {
     }
 }
 
-// function* fetchNotes() {
-//     try {
-
-//         const response = yield axios.get('/api/notes');
-
-//         yield put({ type: 'SET_NOTES', payload: response.data });
-//     } catch (error) {
-//         console.log('could not find', error);
-//     }
-// }
-
-// function* fetchNotesDetails(action) {
-//     console.log(action.payload);
-//     const notesId = action.payload;
-//     try {
-//         const notesDetailsRes = yield axios({
-//         method: 'GET',
-//         url: `/api/notes/${notesId}`
-//     })
-//     yield put({
-//         type: 'SET_NOTES_DETAILS',
-//         payload: notesDetailsRes.data 
-//     })
-//     } catch (err) {
-//     console.log('fetchNotesDetails fail:', err);
-//     }
-// }
 
 function* addEndeavor(action) {
     console.log(action.payload);
@@ -136,8 +109,6 @@ function* updateEndeavor(action) {
 function* endeavorSaga() {
     yield takeLatest('FETCH_ENDEAVOR', fetchEndeavors);
     yield takeLatest('FETCH_ENDEAVOR_DETAILS', fetchEndeavorDetails);
-    // yield takeLatest('FETCH_NOTES', fetchNotes);
-    // yield takeLatest('FETCH_NOTES_DETAILS', fetchNotesDetails);
     yield takeLatest('ADD_ENDEAVOR', addEndeavor);
     yield takeLatest('DELETE_ENDEAVOR', deleteEndeavor);
     yield takeLatest('FETCH_ENDEAVOR_TO_EDIT', fetchEndeavorToEdit)
