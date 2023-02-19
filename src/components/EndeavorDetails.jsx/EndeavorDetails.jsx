@@ -15,7 +15,7 @@ function EndeavorDetails(endeavor) {
     const dispatch = useDispatch();
     const history = useHistory();
     const endeavor_details = useSelector(store => store.endeavor_details)
-    
+
 
     useEffect(() => {
         dispatch({
@@ -36,6 +36,13 @@ function EndeavorDetails(endeavor) {
 
     const backToEndeavors = () => {
         history.push(`/endeavor`)
+    }
+
+    const deleteEndeavor = (id) => {
+        dispatch({
+        type: 'DELETE_ENDEAVOR',
+        payload: id
+        })
     }
 
     return (
@@ -120,14 +127,20 @@ function EndeavorDetails(endeavor) {
     <Button sx={{
         color: '#336699',
         padding: 1,
-        marginLeft: 3,
+        marginLeft: 2,
         backgroundColor: '#CCFF00'
     }} onClick={() => completeEndeavor(endeavor.id)}>Complete</Button>
     <Button sx={{
         color: '#336699',
         padding: 1,
+        marginLeft: 3,
+        backgroundColor: '#CCFF00'
+    }} onClick={() => deleteEndeavor(endeavor.id)}>Delete</Button>
+    <Button sx={{
+        color: '#336699',
+        padding: 1,
         backgroundColor: '#CCFF00',
-        marginLeft: 62
+        marginLeft: 48
     }} onClick={() => backToEndeavors(endeavor.id)}>Back</Button>
             </Card>
         </>
