@@ -27,7 +27,7 @@ function Home() {
                 fontSize: 22,
                 lineHeight: 1,
                 fontFamily: 'Rugrats Sans'
-            }}>Welcome back, {user.username}!</Card>
+            }}>Hello, {user.username}!</Card>
             {/* <Card sx={{
                 textAlign: 'left',
                 fontSize: 18,

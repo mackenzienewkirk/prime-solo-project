@@ -47,22 +47,6 @@ function* addEndeavor(action) {
     }
 }
 
-function* addNote(action) {
-    console.log(action.payload);
-    try {
-        const response = yield axios({
-            method: 'POST',
-            url: '/api/notes',
-            data: action.payload
-        })
-        yield put({ 
-            type: 'FETCH_NOTES',
-            payload: response.data
-    })
-    } catch (err) {
-        console.log(err);
-    }
-}
 
 function* deleteEndeavor(action) {
     const endeavorToDelete = action.payload;
@@ -113,7 +97,7 @@ function* endeavorSaga() {
     yield takeLatest('DELETE_ENDEAVOR', deleteEndeavor);
     yield takeLatest('FETCH_ENDEAVOR_TO_EDIT', fetchEndeavorToEdit)
     yield takeLatest('UPDATE_ENDEAVOR', updateEndeavor);
-    yield takeLatest('ADD_NOTE', addNote);
+    
 }
 
 export default endeavorSaga; 

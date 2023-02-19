@@ -48,13 +48,13 @@ function UserPage() {
         marginBottom: 15
         
         }}>
-      <Card sx={{
+      {/* <Card sx={{
         padding: 2,
         fontSize: 20,
 
-      }}>Completed Endeavors:</Card>
+      }}>Completed Endeavors:</Card> */}
         </Card>
-        <Grid sx={{ 
+        {/* <Grid sx={{ 
             display: 'grid',
             gap: 3,
             gridTemplateColumns: 'repeat(3, 2fr)',
@@ -64,7 +64,7 @@ function UserPage() {
             {endeavor?.map(endeavor => (
                 <EndeavorItem key={endeavor.id} endeavor={endeavor} />
             ))}
-        </Grid>
+        </Grid> */}
     </div>
   );
 }

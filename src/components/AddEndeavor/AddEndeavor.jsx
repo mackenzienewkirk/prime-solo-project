@@ -49,7 +49,7 @@ function AddEndeavor() {
 const prefillForm = () => {
   setTitleInput('Build a Bird Bath');
   setBudgetInput('30');
-  setMaterialsInput('Wood, Screws, Screwdriver, Paint, Water');
+  setMaterialsInput('Concrete, Bowl, Bird Bath Stand, Paint, Water');
   setInspirationInput('Birdfeeder Goal')
   setDescriptionInput('I want to build a matching bird bath for the current bird bath project! It will look like a retro swimming pool.');
   setEnd_goalInput('7/5/23');

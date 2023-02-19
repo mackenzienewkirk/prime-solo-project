@@ -20,7 +20,6 @@ import EndeavorDetails from '../EndeavorDetails.jsx/EndeavorDetails';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
-import Note from '../Note/Note';
 import EditEndeavor from '../EditEndeavor/EditEndeavor';
 import AboutPage from '../AboutPage';
 import Home from '../Home/Home';
@@ -60,12 +59,7 @@ function App() {
             <EditEndeavor />
           </Route>
 
-          <Route
-            exact
-            path="/addNote"
-          >
-            <Note />
-          </Route>
+        
 
           {/* For protected routes, the view could show one of several things on the same route.
             Visiting localhost:3000/user will show the UserPage if the user is logged in.
