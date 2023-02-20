@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import {useSelector} from 'react-redux';
+import { Input } from '@mui/material';
 
 function LoginForm() {
   const [username, setUsername] = useState('');
@@ -35,7 +36,15 @@ function LoginForm() {
       <div>
         <label htmlFor="username">
           Username: 
-          <input
+          <Input sx={{
+          backgroundColor: '#ffd3db',
+          color: '#37004D',
+          padding: .5,
+          marginBottom: 1,
+          marginLeft: 1,
+          marginRight: .8, 
+          width: 230, 
+        }}
             type="text"
             name="username"
             required
@@ -48,7 +57,16 @@ function LoginForm() {
       <div>
         <label htmlFor="password">
           Password: 
-          <input
+          <Input sx={{
+          backgroundColor: '#ffd3db',
+          color: '#37004D',
+          padding: .5,
+          marginBottom: 1,
+          marginLeft: 1,
+          marginRight: .8, 
+          width: 230, 
+          borderRadius: 2,
+        }}
             type="password"
             name="password"
             required

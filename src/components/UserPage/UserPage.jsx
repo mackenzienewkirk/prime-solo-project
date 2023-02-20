@@ -29,11 +29,12 @@ function UserPage() {
       {/* <img src='images/pillow.jpg' className='pillow'></img>
       <img src='images/yarn.jpg' className='yarn'></img> */}
       <Card sx={{
-        width: 350,
-        height: 200,
+        width: 260,
+        height: 140,
         marginTop: -40,
         marginLeft: 64,
         marginRight: 15,
+        marginBottom: 10,
         padding: 2,
         color: '#FFD30B',
             background: '#46629A',
@@ -46,7 +47,6 @@ function UserPage() {
           }}>
           </Card>
       <h2>{user.username}</h2>
-      <p>ID: {user.id}</p>
       <LogOutButton className="btn" />
       </Card>
       <br></br>
