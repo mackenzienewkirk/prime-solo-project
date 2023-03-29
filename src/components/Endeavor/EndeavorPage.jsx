@@ -17,6 +17,7 @@ function EndeavorPage() {
 
 
     return (
+        //Info cards to state what to do on the page//
         <>
         <Icons />
         <Card sx={{
@@ -41,6 +42,7 @@ function EndeavorPage() {
             lineHeight: 1,
             fontFamily: 'Rugrats Sans'
         }}>Check out your current endeavors:</Card>
+
         <Card sx={{
             borderRadius: 4,
             boxShadow: 2,

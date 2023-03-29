@@ -28,6 +28,7 @@ function EndeavorItem({ endeavor }) {
 
     
     return (
+        //Individual card to show the titles of all created endeavors//
         <Card sx={{ 
             width: 280,
             height: 120,
@@ -40,13 +41,6 @@ function EndeavorItem({ endeavor }) {
             borderRadius: 4
 
             }}>
-    {/* <CardMedia
-        component="img"
-        alt="title for id"
-        height="100"
-        width="300"
-        image='images/in_the_works_logo.png'
-    /> */}
     <Card sx={{
         textAlign: 'left',
         fontSize: 22,

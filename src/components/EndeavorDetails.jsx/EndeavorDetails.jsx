@@ -40,6 +40,7 @@ function EndeavorDetails(endeavor) {
 
 
     return (
+        //A detail view of the clicked endeavor from the gallery page//
         <>
         <h1>
         <Card sx={{

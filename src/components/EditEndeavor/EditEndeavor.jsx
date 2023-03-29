@@ -90,6 +90,7 @@ function EditEndeavor() {
     }
 
     return(
+        //Input fields to edit any previously created endeavors//
         <Card sx={{
             color: '#2b4743',
             background: '#FAFAFA',
